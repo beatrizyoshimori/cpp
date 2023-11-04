@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:20:01 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/01 21:56:14 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:06:43 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ int main()
 
 	while (true)
 	{
+		std::cout << std::endl << MAGENTA << "Type a command:" << std::endl;
+		std::cout << std::setw(8) << std::left << "ADD: " << "saves a new contact" << std::endl;
+		std::cout << std::setw(8) << std::left << "SEARCH: " << "displays a specific contact" << std::endl;
+		std::cout << std::setw(8) << std::left << "EXIT: " << "quits the program" << std::endl << std::endl << RESET;
 		std::cout << "> ";
 		getline(std::cin, input);
 		if (input == "ADD")
 			phonebook.addContact();
 		else if (input == "SEARCH")
-			std::cout << "search" << std::endl;
-		else if (input == "EXIT") break ;
+			phonebook.searchContact();
+		else if (input == "EXIT")
+			break ;
 		else
-		{
-			std::cout << "Usage:" << std::endl;
-			std::cout << "ADD: save a new contact" << std::endl;
-			std::cout << "SEARCH: display a specific contact" << std::endl;
-			std::cout << "EXIT: quit the program" << std::endl;
-		}
+			std::cout << CLEAR_WINDOW << RED << "Wrong input!" << RESET << std::endl;
 	}
 	Contact c;
 	return (0);
