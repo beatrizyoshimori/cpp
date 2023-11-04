@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:20:01 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/03 21:06:43 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/03 21:29:57 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ int main()
 		else
 			std::cout << CLEAR_WINDOW << RED << "Wrong input!" << RESET << std::endl;
 	}
-	Contact c;
 	return (0);
 }
