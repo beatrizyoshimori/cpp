@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:21:29 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/01 21:59:56 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:38:42 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 
 class	Contact
 {
@@ -24,6 +25,10 @@ class	Contact
 		void	setFirstName(void);
 		void	setLastName(void);
 		void	setNickname(void);
+		void	setPhoneNumber(void);
+		void	setDarkestSecret(void);
+		void	printPhonebookContact(void);
+		void	printContactInfo(void);
 
 	private:
 		std::string	_firstName;

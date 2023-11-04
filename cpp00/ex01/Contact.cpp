@@ -6,11 +6,12 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:21:20 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/01 22:06:00 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/03 20:46:25 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
 Contact::Contact(void)
 {
@@ -28,13 +29,12 @@ void	Contact::setFirstName(void)
 
 	while (true)
 	{
-		std::cout << "First name: ";
+		std::cout << CLEAR_WINDOW << "First name: ";
 		getline(std::cin, name);
 		if (!name.empty())
 			break ;
 	}
 	this->_firstName = name;
-	std::cout << "Added first name" << std::endl;
 }
 
 void	Contact::setLastName(void)
@@ -48,8 +48,7 @@ void	Contact::setLastName(void)
 		if (!lastName.empty())
 			break ;
 	}
-	this->_firstName = lastName;
-	std::cout << "Added last name" << std::endl;
+	this->_lastName = lastName;
 }
 
 void	Contact::setNickname(void)
@@ -63,6 +62,50 @@ void	Contact::setNickname(void)
 		if (!nickname.empty())
 			break ;
 	}
-	this->_firstName = nickname;
-	std::cout << "Added nickname" << std::endl;
+	this->_nickname = nickname;
+}
+
+void	Contact::setPhoneNumber(void)
+{
+	std::string	phoneNumber;
+
+	while (true)
+	{
+		std::cout << "Phone number: ";
+		getline(std::cin, phoneNumber);
+		if (!phoneNumber.empty())
+			break ;
+	}
+	this->_phoneNumber = phoneNumber;
+}
+
+void	Contact::setDarkestSecret(void)
+{
+	std::string	darkestSecret;
+
+	while (true)
+	{
+		std::cout << "Darkest secret: ";
+		getline(std::cin, darkestSecret);
+		if (!darkestSecret.empty())
+			break ;
+	}
+	this->_darkestSecret = darkestSecret;
+}
+
+void	Contact::printPhonebookContact(void)
+{
+	std::cout << std::right << "|" << 
+	std::setw(10) << this->_firstName << "|" <<
+	std::setw(10) << this->_lastName << "|" <<
+	std::setw(10) << this->_nickname << "|" << std::endl;
+}
+
+void	Contact::printContactInfo(void)
+{
+	std::cout << CLEAR_WINDOW << std::setw(17) << std::left << "First name: " << this->_firstName << std::endl;
+	std::cout << std::setw(17) << std::left << "Last name: " << this->_lastName << std::endl;
+	std::cout << std::setw(17) << std::left << "Nickname: " << this->_nickname << std::endl;
+	std::cout << std::setw(17) << std::left << "Phone number: " << this->_phoneNumber << std::endl;
+	std::cout << std::setw(17) << std::left << "Darkest secret: " << this->_darkestSecret << std::endl;
 }
