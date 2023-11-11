@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:18:18 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/03 21:09:46 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:21:38 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 PhoneBook::PhoneBook(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Phonebook created" << std::endl;
 	this->_index = 0;
 	this->numberOfContacts = 0;
 	return ;
@@ -23,7 +23,7 @@ PhoneBook::PhoneBook(void)
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Phonebook closed" << std::endl;
 	return ;
 }
 
@@ -34,6 +34,7 @@ void	PhoneBook::addContact(void)
 		this->_index = 0;
 		this->numberOfContacts = 7;
 	}
+	std::cout << CLEAR_WINDOW << "Add contact info:" << std::endl;
 	this->_contacts[this->_index].setFirstName();
 	this->_contacts[this->_index].setLastName();
 	this->_contacts[this->_index].setNickname();

@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:21:20 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/04 15:53:40 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:20:33 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,11 @@ void	Contact::setFirstName(void)
 
 	while (true)
 	{
-		std::cout << CLEAR_WINDOW << "First name: ";
+		std::cout << "First name: ";
 		getline(std::cin, name);
 		if (!name.empty())
 			break ;
+		std::cout << RED << "Invalid first name." << std::endl << RESET;
 	}
 	this->_firstName = name;
 }
@@ -47,6 +48,7 @@ void	Contact::setLastName(void)
 		getline(std::cin, lastName);
 		if (!lastName.empty())
 			break ;
+		std::cout << RED << "Invalid last name." << std::endl << RESET;
 	}
 	this->_lastName = lastName;
 }
@@ -61,6 +63,7 @@ void	Contact::setNickname(void)
 		getline(std::cin, nickname);
 		if (!nickname.empty())
 			break ;
+		std::cout << RED << "Invalid nickname." << std::endl << RESET;
 	}
 	this->_nickname = nickname;
 }
@@ -73,8 +76,9 @@ void	Contact::setPhoneNumber(void)
 	{
 		std::cout << "Phone number: ";
 		getline(std::cin, phoneNumber);
-		if (!phoneNumber.empty())
+		if (!phoneNumber.empty() && phoneNumber.find_first_not_of("0123456789()-") == std::string::npos)
 			break ;
+		std::cout << RED << "Invalid phone number." << std::endl << RESET;
 	}
 	this->_phoneNumber = phoneNumber;
 }
@@ -89,6 +93,7 @@ void	Contact::setDarkestSecret(void)
 		getline(std::cin, darkestSecret);
 		if (!darkestSecret.empty())
 			break ;
+		std::cout << RED << "Invalid darkest secret." << std::endl << RESET;
 	}
 	this->_darkestSecret = darkestSecret;
 }
