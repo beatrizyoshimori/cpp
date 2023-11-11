@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 19:21:20 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/03 20:46:25 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:53:40 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,25 @@ void	Contact::setDarkestSecret(void)
 	this->_darkestSecret = darkestSecret;
 }
 
+std::string	Contact::truncateInfo(std::string info)
+{
+	std::string str;
+
+	str = info;
+	if (str.length() > 10)
+	{
+		str.erase(9, std::string::npos);
+		str.push_back('.');
+	}
+	return (str);
+}
+
 void	Contact::printPhonebookContact(void)
 {
 	std::cout << std::right << "|" << 
-	std::setw(10) << this->_firstName << "|" <<
-	std::setw(10) << this->_lastName << "|" <<
-	std::setw(10) << this->_nickname << "|" << std::endl;
+	std::setw(10) << truncateInfo(this->_firstName) << "|" <<
+	std::setw(10) << truncateInfo(this->_lastName) << "|" <<
+	std::setw(10) << truncateInfo(this->_nickname) << "|" << std::endl;
 }
 
 void	Contact::printContactInfo(void)
