@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:54:02 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/11 17:58:19 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/13 21:52:42 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 Zombie::Zombie(std::string zombieName)
 {
 	this->name = zombieName;
-	return ;
+	std::cout << this->name << " created" << std::endl;
 }
 
 Zombie::~Zombie(void)
 {
-	return ;
+	std::cout << this->name << " destroyed" << std::endl;
 }
 
 void	Zombie::announce(void)

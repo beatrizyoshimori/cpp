@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:58:56 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/11 17:59:38 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/13 21:52:57 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 Zombie* newZombie( std::string name )
 {
+	Zombie	*newZomb = new Zombie(name);
 
+	return (newZomb);
 }

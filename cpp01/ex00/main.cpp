@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:39:15 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/11 17:58:55 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:18:08 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int	main(void)
 {
+	Zombie *Z = newZombie("1");
+	randomChump("2");
+	delete Z;
 	return (0);
 }
