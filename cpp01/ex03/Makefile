@@ -15,7 +15,7 @@ OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 
 all:					$(NAME)
 
-$(OBJECTS_PATH)%.o:		%.cpp
+$(OBJECTS_PATH)%.o:		%.cpp Weapon.hpp HumanA.hpp HumanB.hpp
 						@mkdir -p $(dir $@)
 						@$(CC) $(FLAGS) -c $< -o $@
 

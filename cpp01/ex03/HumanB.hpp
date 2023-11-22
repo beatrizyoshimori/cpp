@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:36:26 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/21 22:23:23 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:09:19 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,12 @@ class HumanB
 		std::string	name;
 
 	public:
-		HumanB(void);
-		~HumanB(void);
 		HumanB(std::string newName);
+		~HumanB(void);
 
 
 		void	attack(void);
-		void	setWeapon(Weapon newWeapon);
+		void	setWeapon(Weapon &newWeapon);
 };
 
 #endif

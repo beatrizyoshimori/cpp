@@ -6,21 +6,15 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:42:42 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/21 22:10:27 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:04:26 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(void)
+HumanA::HumanA(std::string newName, Weapon &newWeapon) : weaponA(&newWeapon), name(newName)
 {
 	return ;
-}
-
-HumanA::HumanA(std::string newName, Weapon newWeapon)
-{
-	this->name = newName;
-	this->weaponA = &newWeapon;
 }
 
 HumanA::~HumanA(void)

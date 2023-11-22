@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:36:32 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/21 22:05:28 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:07:24 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ class	HumanA
 		std::string	name;
 
 	public:
-		HumanA(void);
+		HumanA(std::string newName, Weapon &newWeapon);
 		~HumanA(void);
-		HumanA(std::string newName, Weapon newWeapon);
 
 		void	attack(void);
 };
