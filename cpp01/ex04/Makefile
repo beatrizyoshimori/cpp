@@ -6,13 +6,14 @@ RM				=		rm -rf
 
 OBJECTS_PATH	=		objects/
 
-SOURCES			=		main.cpp
+SOURCES			=		main.cpp \
+						ReplaceInFile.cpp
 
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 
 all:					$(NAME)
 
-$(OBJECTS_PATH)%.o:		%.cpp
+$(OBJECTS_PATH)%.o:		%.cpp ReplaceInFile.hpp
 						@mkdir -p $(dir $@)
 						@$(CC) $(FLAGS) -c $< -o $@
 
