@@ -18,7 +18,7 @@ $(OBJECTS_PATH)%.o:		%.cpp
 
 $(NAME):				$(OBJECTS)
 						@$(CC) $(FLAGS) $(OBJECTS) -o $@
-						@echo "\033[32mBrain compiled!"
+						@echo "\033[32mBrain compiled!\033[0m"
 
 clean:
 						@$(RM) $(OBJECTS_PATH)

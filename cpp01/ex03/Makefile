@@ -11,17 +11,21 @@ SOURCES			=		main.cpp \
 						HumanA.cpp \
 						HumanB.cpp
 
+HEADERS			=		Weapon.hpp \
+						HumanA.hpp \
+						HumanB.hpp
+
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 
 all:					$(NAME)
 
-$(OBJECTS_PATH)%.o:		%.cpp Weapon.hpp HumanA.hpp HumanB.hpp
+$(OBJECTS_PATH)%.o:		%.cpp $(HEADERS)
 						@mkdir -p $(dir $@)
-						@$(CC) $(FLAGS) -c $< -o $@
+						$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):				$(OBJECTS)
-						@$(CC) $(FLAGS) $(OBJECTS) -o $@
-						@echo "\033[32mUnnecessary violence compiled!"
+						$(CC) $(FLAGS) $(OBJECTS) -o $@
+						@echo "\033[32mUnnecessary violence compiled!\033[0m"
 
 clean:
 						@$(RM) $(OBJECTS_PATH)

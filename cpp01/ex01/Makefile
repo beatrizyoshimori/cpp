@@ -10,17 +10,19 @@ SOURCES			=		main.cpp \
 						Zombie.cpp \
 						zombieHorde.cpp
 
+HEADERS			=		Zombie.hpp
+
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 
 all:					$(NAME)
 
-$(OBJECTS_PATH)%.o:		%.cpp Zombie.hpp
+$(OBJECTS_PATH)%.o:		%.cpp $(HEADERS)
 						@mkdir -p $(dir $@)
 						@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):				$(OBJECTS)
 						@$(CC) $(FLAGS) $(OBJECTS) -o $@
-						@echo "\033[32mZombie Horde compiled!"
+						@echo "\033[32mZombie Horde compiled!\033[0m"
 
 clean:
 						@$(RM) $(OBJECTS_PATH)
