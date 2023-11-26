@@ -10,17 +10,20 @@ SOURCES			=		main.cpp \
 						PhoneBook.cpp \
 						Contact.cpp
 
+HEADERS			=		Contact.hpp \
+						PhoneBook.hpp
+
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 
 all:					$(NAME)
 
-$(OBJECTS_PATH)%.o:		%.cpp Contact.hpp PhoneBook.hpp
+$(OBJECTS_PATH)%.o:		%.cpp $(HEADERS)
 						@mkdir -p $(dir $@)
 						@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):				$(OBJECTS)
 						@$(CC) $(FLAGS) $(OBJECTS) -o $@
-						@echo "\033[32mPhonebook compiled!"
+						@echo "\033[32mPhonebook compiled!\033[0m"
 
 clean:
 						@$(RM) $(OBJECTS_PATH)

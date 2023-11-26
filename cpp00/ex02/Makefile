@@ -9,17 +9,19 @@ OBJECTS_PATH	=		objects/
 SOURCES			=		tests.cpp \
 						Account.cpp
 
+HEADERS			=		Account.hpp
+
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 
 all:					$(NAME)
 
-$(OBJECTS_PATH)%.o:		%.cpp Account.hpp
+$(OBJECTS_PATH)%.o:		%.cpp $(HEADERS)
 						@mkdir -p $(dir $@)
 						@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):				$(OBJECTS)
 						@$(CC) $(FLAGS) $(OBJECTS) -o $@
-						@echo "\033[32mAccount compiled!"
+						@echo "\033[32mAccount compiled!\033[0m"
 
 clean:
 						@$(RM) $(OBJECTS_PATH)
