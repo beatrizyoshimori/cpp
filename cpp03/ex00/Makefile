@@ -21,7 +21,7 @@ $(OBJECTS_PATH)%.o:		%.cpp $(HEADERS)
 
 $(NAME):				$(OBJECTS)
 						@$(CC) $(FLAGS) $(OBJECTS) -o $@
-						@echo "\033[32mClap Trap compiled!\033[0m"
+						@echo "\033[32mClapTrap compiled!\033[0m"
 
 clean:
 						@$(RM) $(OBJECTS_PATH)
