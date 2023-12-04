@@ -1,4 +1,14 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/04 19:49:45 by byoshimo          #+#    #+#             */
+/*   Updated: 2023/12/04 19:49:50 by byoshimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
@@ -6,9 +16,9 @@ ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
 	this->name = name;
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
 	return ;
 }
 
@@ -69,7 +79,16 @@ void	ClapTrap::attack(const std::string& target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hitPoints < 1)
+	{
+		std::cout << "ClapTrap " << this->getName() << " took 0 points of damage" << std::endl;
 		return ;
+	}
+	else if (this->hitPoints < amount)
+	{
+		std::cout << "ClapTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
+		this->hitPoints = 0;
+		return ;
+	}
 	this->hitPoints -= amount;
 	std::cout << "ClapTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
 }
