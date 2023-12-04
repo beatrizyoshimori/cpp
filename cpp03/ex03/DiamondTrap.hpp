@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:12:55 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/01 19:26:05 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:12:00 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <string>
 #include "ScavTrap.hpp"
-#include "Fragtrap.hpp"
+#include "FragTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
@@ -24,7 +24,11 @@ class DiamondTrap : public ScavTrap, public FragTrap
 
 	public:
 		DiamondTrap(std::string name);
+		DiamondTrap(const DiamondTrap &obj);
+		DiamondTrap& operator=(const DiamondTrap &obj);
 		~DiamondTrap(void);
+
+		void	whoAmI();
 };
 
 #endif
