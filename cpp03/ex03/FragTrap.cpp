@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:16:53 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/01 19:16:55 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:02:57 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap constructor called" << std::endl;
+	ClapTrap::hitPoints = 100;
+	ClapTrap::energyPoints = 100;
+	ClapTrap::attackDamage = 30;
 	return ;
 }
 
