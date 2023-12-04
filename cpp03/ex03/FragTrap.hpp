@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:16:57 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/01 19:16:59 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:18:39 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	private:
 
