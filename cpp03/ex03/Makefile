@@ -1,4 +1,4 @@
-NAME			=		fragTrap
+NAME			=		diamondTrap
 
 CC				=		c++
 FLAGS			=		-Wall -Wextra -Werror -std=c++98
@@ -9,11 +9,13 @@ OBJECTS_PATH	=		objects/
 SOURCES			=		main.cpp \
 						ClapTrap.cpp \
 						ScavTrap.cpp \
-						FragTrap.cpp
+						FragTrap.cpp \
+						DiamondTrap.cpp
 
 HEADERS			=		ClapTrap.hpp \
 						ScavTrap.hpp \
-						FragTrap.hpp
+						FragTrap.hpp \
+						DiamondTrap.hpp
 
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 
@@ -25,7 +27,7 @@ $(OBJECTS_PATH)%.o:		%.cpp $(HEADERS)
 
 $(NAME):				$(OBJECTS)
 						@$(CC) $(FLAGS) $(OBJECTS) -o $@
-						@echo "\033[32mFragTrap compiled!\033[0m"
+						@echo "\033[32mDiamondTrap compiled!\033[0m"
 
 clean:
 						@$(RM) $(OBJECTS_PATH)
