@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:12:55 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 21:51:10 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:04:18 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap& operator=(const DiamondTrap &obj);
 		~DiamondTrap(void);
 
+		void	takeDamage(unsigned int amount);
 		void	whoAmI();
 		using	ScavTrap::attack;
 };

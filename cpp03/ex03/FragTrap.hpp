@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:16:57 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 19:18:39 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:02:23 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class FragTrap : public virtual ClapTrap
 		~FragTrap(void);
 
 		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
 		void	highFivesGuys(void);
 };
 
