@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:17:05 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 21:45:19 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 21:54:49 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	ScavTrap::attack(const std::string& target)
 	if (this->hitPoints < 1 || this->energyPoints < 1)
 		return ;
 	this->energyPoints--;
-	std::cout << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 }
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << this->getName() << " is in Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " is in Gate keeper mode" << std::endl;
 }

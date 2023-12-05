@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:52:12 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 21:43:27 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 21:54:09 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,24 +73,24 @@ void	ClapTrap::attack(const std::string& target)
 	if (this->hitPoints < 1 || this->energyPoints < 1)
 		return ;
 	this->energyPoints--;
-	std::cout << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hitPoints < 1)
 	{
-		std::cout << this->getName() << " took 0 points of damage" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " took 0 points of damage" << std::endl;
 		return ;
 	}
 	else if (this->hitPoints < amount)
 	{
-		std::cout << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
+		std::cout << "ClapTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
 		this->hitPoints = 0;
 		return ;
 	}
 	this->hitPoints -= amount;
-	std::cout << this->getName() << " took " << amount << " points of damage" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -99,7 +99,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	this->hitPoints += amount;
 	this->energyPoints--;
-	std::cout << this->getName() << " was repaired, getting " << amount << " hit points back" << std::endl;
+	std::cout << "ClapTrap " << this->getName() << " was repaired, getting " << amount << " hit points back" << std::endl;
 }
 
 void	ClapTrap::getStatus(void)
