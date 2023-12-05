@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:12:40 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 20:20:46 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 21:56:17 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Scav
 {
 	std::cout << "DiamondTrap constructor called" << std::endl;
 	this->name = name;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
-	// this->attack() = ScavTrap::attack();
+	// this->hitPoints = FragTrap::hitPoints;
+	// this->energyPoints = ScavTrap::energyPoints;
+	// this->attackDamage = FragTrap::attackDamage;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj) : ClapTrap(obj.getName()), ScavTrap(obj.getName()), FragTrap(obj.getName())
