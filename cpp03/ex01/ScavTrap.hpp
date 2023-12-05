@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:51:19 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 19:51:20 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 21:59:25 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : public ClapTrap
 		~ScavTrap(void);
 
 		void	attack(const std::string& target);
+		void	takeDamage(unsigned int amount);
 		void	guardGate(void);
 };
 

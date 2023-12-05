@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:53:01 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 21:54:13 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:02:52 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,23 @@ void	FragTrap::attack(const std::string& target)
 		return ;
 	this->energyPoints--;
 	std::cout << "FragTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+}
+
+void	FragTrap::takeDamage(unsigned int amount)
+{
+	if (this->hitPoints < 1)
+	{
+		std::cout << "FragTrap " << this->getName() << " took 0 points of damage" << std::endl;
+		return ;
+	}
+	else if (this->hitPoints < amount)
+	{
+		std::cout << "FragTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
+		this->hitPoints = 0;
+		return ;
+	}
+	this->hitPoints -= amount;
+	std::cout << "FragTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:51:10 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 19:51:12 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 22:01:06 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	main(void)
 	c.attack("A");
 	a.takeDamage(c.getAttackDamage());
 	c.guardGate();
+	b.attack("C");
+	c.takeDamage(b.getAttackDamage());
 
 	a.getStatus();
 	b.getStatus();

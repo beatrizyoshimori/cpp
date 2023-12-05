@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:53:14 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 21:54:20 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/04 21:59:39 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,23 @@ void	ScavTrap::attack(const std::string& target)
 		return ;
 	this->energyPoints--;
 	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
+}
+
+void	ScavTrap::takeDamage(unsigned int amount)
+{
+	if (this->hitPoints < 1)
+	{
+		std::cout << "ScavTrap " << this->getName() << " took 0 points of damage" << std::endl;
+		return ;
+	}
+	else if (this->hitPoints < amount)
+	{
+		std::cout << "ScavTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
+		this->hitPoints = 0;
+		return ;
+	}
+	this->hitPoints -= amount;
+	std::cout << "ScavTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
 }
 
 void	ScavTrap::guardGate(void)
