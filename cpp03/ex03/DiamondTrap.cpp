@@ -6,19 +6,30 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:12:40 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 22:09:16 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/05 22:12:05 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap(void)
+{
+	std::cout << "DiamondTrap default constructor called" << std::endl;
+	this->name = "";
+	this->type = "DiamondTrap";
+	this->hitPoints = FragTrap::HIT_POINTS;
+	this->energyPoints = ScavTrap::ENERGY_POINTS;
+	this->attackDamage = FragTrap::ATTACK_DAMAGE;
+}
+
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), ScavTrap(name + "_clap_name"), FragTrap(name + "_clap_name")
 {
 	std::cout << "DiamondTrap constructor called" << std::endl;
 	this->name = name;
-	// this->hitPoints = FragTrap::hitPoints;
-	// this->energyPoints = ScavTrap::energyPoints;
-	// this->attackDamage = FragTrap::attackDamage;
+	this->type = "DiamondTrap";
+	this->hitPoints = FragTrap::HIT_POINTS;
+	this->energyPoints = ScavTrap::ENERGY_POINTS;
+	this->attackDamage = FragTrap::ATTACK_DAMAGE;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &obj) : ClapTrap(obj.getName()), ScavTrap(obj.getName()), FragTrap(obj.getName())
@@ -47,22 +58,22 @@ DiamondTrap::~DiamondTrap(void)
 	return ;
 }
 
-void	DiamondTrap::takeDamage(unsigned int amount)
-{
-	if (this->hitPoints < 1)
-	{
-		std::cout << "DiamondTrap " << this->getName() << " took 0 points of damage" << std::endl;
-		return ;
-	}
-	else if (this->hitPoints < amount)
-	{
-		std::cout << "DiamondTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
-		this->hitPoints = 0;
-		return ;
-	}
-	this->hitPoints -= amount;
-	std::cout << "DiamondTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
-}
+// void	DiamondTrap::takeDamage(unsigned int amount)
+// {
+// 	if (this->hitPoints < 1)
+// 	{
+// 		std::cout << "DiamondTrap " << this->getName() << " took 0 points of damage" << std::endl;
+// 		return ;
+// 	}
+// 	else if (this->hitPoints < amount)
+// 	{
+// 		std::cout << "DiamondTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
+// 		this->hitPoints = 0;
+// 		return ;
+// 	}
+// 	this->hitPoints -= amount;
+// 	std::cout << "DiamondTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
+// }
 
 void	DiamondTrap::whoAmI(void)
 {
