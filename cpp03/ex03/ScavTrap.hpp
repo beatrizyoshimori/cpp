@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:17:10 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 22:00:06 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/05 22:12:25 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,21 @@
 
 class ScavTrap : public virtual ClapTrap
 {
-	private:
+	protected:
+		std::string		type;
+		const static int HIT_POINTS = 100;
+		const static int ENERGY_POINTS = 50;
+		const static int ATTACK_DAMAGE = 20;
 
 	public:
+		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap &obj);
 		ScavTrap& operator=(const ScavTrap &obj);
 		~ScavTrap(void);
 
 		void	attack(const std::string& target);
-		void	takeDamage(unsigned int amount);
+		// void	takeDamage(unsigned int amount);
 		void	guardGate(void);
 };
 

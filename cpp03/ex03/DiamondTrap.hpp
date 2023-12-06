@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:12:55 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 22:04:18 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/05 22:21:12 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,16 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
 		std::string	name;
-		using	FragTrap::hitPoints;
-		using	ScavTrap::energyPoints;
-		using	FragTrap::attackDamage;
+		std::string	type;
 
 	public:
+		DiamondTrap(void);
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap &obj);
 		DiamondTrap& operator=(const DiamondTrap &obj);
 		~DiamondTrap(void);
 
-		void	takeDamage(unsigned int amount);
+		// void	takeDamage(unsigned int amount);
 		void	whoAmI();
 		using	ScavTrap::attack;
 };
