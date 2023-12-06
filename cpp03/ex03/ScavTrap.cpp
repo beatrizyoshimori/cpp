@@ -6,18 +6,30 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:17:05 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 22:00:17 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/05 22:11:43 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(void)
+{
+	std::cout << "ScavTrap constructor called" << std::endl;
+	this->name = "";
+	this->type = "ScavTrap";
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
+	return ;
+}
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
-	ClapTrap::hitPoints = 100;
-	ClapTrap::energyPoints = 50;
-	ClapTrap::attackDamage = 20;
+	this->type = "ScavTrap";
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 20;
 	return ;
 }
 
@@ -55,22 +67,22 @@ void	ScavTrap::attack(const std::string& target)
 	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 }
 
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->hitPoints < 1)
-	{
-		std::cout << "ScavTrap " << this->getName() << " took 0 points of damage" << std::endl;
-		return ;
-	}
-	else if (this->hitPoints < amount)
-	{
-		std::cout << "ScavTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
-		this->hitPoints = 0;
-		return ;
-	}
-	this->hitPoints -= amount;
-	std::cout << "ScavTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
-}
+// void	ScavTrap::takeDamage(unsigned int amount)
+// {
+// 	if (this->hitPoints < 1)
+// 	{
+// 		std::cout << "ScavTrap " << this->getName() << " took 0 points of damage" << std::endl;
+// 		return ;
+// 	}
+// 	else if (this->hitPoints < amount)
+// 	{
+// 		std::cout << "ScavTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
+// 		this->hitPoints = 0;
+// 		return ;
+// 	}
+// 	this->hitPoints -= amount;
+// 	std::cout << "ScavTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
+// }
 
 void	ScavTrap::guardGate(void)
 {

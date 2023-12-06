@@ -6,16 +6,28 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:16:39 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 21:54:31 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/05 22:11:30 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "ClapTrap default constructor called" << std::endl;
+	this->name = "";
+	this->type = "ClapTrap";
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+	return ;
+}
+
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
 	this->name = name;
+	this->type = "ClapTrap";
 	this->hitPoints = 10;
 	this->energyPoints = 10;
 	this->attackDamage = 0;
@@ -80,17 +92,17 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->hitPoints < 1)
 	{
-		std::cout << "ClapTrap " << this->getName() << " took 0 points of damage" << std::endl;
+		std::cout << this->type << " " << this->getName() << " took 0 points of damage" << std::endl;
 		return ;
 	}
 	else if (this->hitPoints < amount)
 	{
-		std::cout << "ClapTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
+		std::cout << this->type << " " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
 		this->hitPoints = 0;
 		return ;
 	}
 	this->hitPoints -= amount;
-	std::cout << "ClapTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
+	std::cout << this->type << " " << this->getName() << " took " << amount << " points of damage" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
