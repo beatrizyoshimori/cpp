@@ -6,18 +6,30 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:53:01 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/04 22:02:52 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/06 22:04:20 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap(void)
+{
+	std::cout << "FragTrap default constructor called" << std::endl;
+	this->name = "";
+	ClapTrap::type = "FragTrap";
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+	return ;
+}
+
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "FragTrap constructor called" << std::endl;
-	ClapTrap::hitPoints = 100;
-	ClapTrap::energyPoints = 100;
-	ClapTrap::attackDamage = 30;
+	this->type = "FragTrap";
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	return ;
 }
 
@@ -53,23 +65,6 @@ void	FragTrap::attack(const std::string& target)
 		return ;
 	this->energyPoints--;
 	std::cout << "FragTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
-}
-
-void	FragTrap::takeDamage(unsigned int amount)
-{
-	if (this->hitPoints < 1)
-	{
-		std::cout << "FragTrap " << this->getName() << " took 0 points of damage" << std::endl;
-		return ;
-	}
-	else if (this->hitPoints < amount)
-	{
-		std::cout << "FragTrap " << this->getName() << " took " << this->hitPoints << " points of damage" << std::endl;
-		this->hitPoints = 0;
-		return ;
-	}
-	this->hitPoints -= amount;
-	std::cout << "FragTrap " << this->getName() << " took " << amount << " points of damage" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)
