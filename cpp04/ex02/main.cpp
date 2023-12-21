@@ -6,15 +6,13 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:02:02 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/13 21:37:32 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/21 11:41:52 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Brain.hpp"
 
 int	main(void)

@@ -10,15 +10,11 @@ SOURCES			=		main.cpp \
 						Animal.cpp \
 						Cat.cpp \
 						Dog.cpp \
-						WrongAnimal.cpp \
-						WrongCat.cpp \
 						Brain.cpp
 
 HEADERS			=		Animal.hpp \
 						Cat.hpp \
 						Dog.hpp \
-						WrongAnimal.hpp \
-						WrongCat.hpp \
 						Brain.hpp
 
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
