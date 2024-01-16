@@ -1,48 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/21 15:22:51 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/15 17:55:07 by byoshimo         ###   ########.fr       */
+/*   Created: 2024/01/15 18:10:27 by byoshimo          #+#    #+#             */
+/*   Updated: 2024/01/15 21:38:39 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "MateriaSource.hpp"
 
-Character::Character(void) : ICharacter()
+MateriaSource::MateriaSource(void) : IMateriaSource()
 {
-	std::cout << "Character default constructor called" << std::endl;
-	this->_name = "";
+	std::cout << "MateriaSource default constructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->_inventory[i] = NULL;
 	return ;
 }
 
-Character::Character(std::string name) : ICharacter()
+MateriaSource::MateriaSource(const MateriaSource &obj)
 {
-	std::cout << "Character constructor called" << std::endl;
-	this->_name = name;
-	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = NULL;
-	return ;
-}
-
-Character::Character(const Character &obj)
-{
-	std::cout << "Character copy constructor called" << std::endl;
+	std::cout << "MateriaSource copy constructor called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
-Character&	Character::operator=(const Character &obj)
+MateriaSource&	MateriaSource::operator=(const MateriaSource &obj)
 {
-	std::cout << "Character copy assignment operator called" << std::endl;
+	std::cout << "MateriaSource copy assignment operator called" << std::endl;
 	if (this != &obj)
 	{
-		this->_name = obj._name;
 		for (int i = 0; i < 4; i++)
 		{
 			if (this->_inventory[i])
@@ -57,9 +46,9 @@ Character&	Character::operator=(const Character &obj)
 	return (*this);
 }
 
-Character::~Character()
+MateriaSource::~MateriaSource()
 {
-	std::cout << "Character destructor called" << std::endl;
+	std::cout << "MateriaSource destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		delete (this->_inventory[i]);
@@ -68,19 +57,14 @@ Character::~Character()
 	return ;
 }
 
-std::string const &	Character::getName() const
-{
-	return (this->_name);
-}
-
-AMateria *Character::getAMateria(int idx) const
+AMateria *MateriaSource::getAMateria(int idx) const
 {
 	if ((0 <= idx && idx <= 3) && this->_inventory[idx] != NULL)
 		return this->_inventory[idx];
 	return NULL;
 }
 
-void	Character::equip(AMateria* m)
+void MateriaSource::learnMateria(AMateria* m)
 {
 	for (int i = 0; i < 4; i++)
 	{
@@ -91,14 +75,13 @@ void	Character::equip(AMateria* m)
 		}
 	}
 }
-void	Character::unequip(int idx)
-{
-	if (idx >= 0 && idx <=3 && this->_inventory[idx] != NULL)
-		this->_inventory[idx] = NULL;
-}
 
-void	Character::use(int idx, ICharacter& target)
+AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	if (idx >= 0 && idx <=3 && this->_inventory[idx] != NULL)
-		this->_inventory[idx]->use(target);
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_inventory[i]->getType() == type)
+			return (this->getAMateria(i)->clone());
+	}
+	return (NULL);
 }

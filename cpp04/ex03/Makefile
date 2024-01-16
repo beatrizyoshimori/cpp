@@ -9,11 +9,17 @@ OBJECTS_PATH	=		objects/
 SOURCES			=		main.cpp \
 						AMateria.cpp \
 						Cure.cpp \
-						Ice.cpp
+						Ice.cpp \
+						Character.cpp \
+						MateriaSource.cpp
 
 HEADERS			=		AMateria.hpp \
 						Cure.hpp \
-						Ice.hpp
+						Ice.hpp \
+						Character.hpp \
+						ICharacter.hpp \
+						MateriaSource.hpp \
+						IMateriaSource.hpp
 
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 

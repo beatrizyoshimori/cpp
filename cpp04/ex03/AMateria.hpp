@@ -6,17 +6,19 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:52:12 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/21 15:49:56 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/15 22:00:32 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIA_HPP
-# define MATERIA_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 #include <iostream>
 #include <string>
 
 #include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria
 {
