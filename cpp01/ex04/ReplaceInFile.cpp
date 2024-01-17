@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 17:56:03 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/25 18:53:19 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/17 17:32:21 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ ReplaceInFile::ReplaceInFile(char **argv)
 	if (infile.rdstate())
 	{
 		std::cout << "Could not open file!" << std::endl;
+		this->infile.close();
 		exit(1);
 	}
 	std::string	filename(argv[1]);
