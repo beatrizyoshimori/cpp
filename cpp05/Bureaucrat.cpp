@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:37:56 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/16 20:37:34 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:28:22 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,10 @@ void	Bureaucrat::decrementGrade(int value)
 	if (this->_grade + value > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade += value;
+}
+
+std::ostream& operator<<(std::ostream& lhs, const Bureaucrat& obj)
+{
+	lhs << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+	return (lhs);
 }
