@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:37:56 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/17 18:28:22 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:44:21 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,14 @@ std::ostream& operator<<(std::ostream& lhs, const Bureaucrat& obj)
 {
 	lhs << obj.getName() << ", bureaucrat grade " << obj.getGrade();
 	return (lhs);
+}
+
+const char *Bureaucrat::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade too high!");
+}
+
+const char *Bureaucrat::GradeTooLowException::what(void) const throw()
+{
+	return ("Grade too low!");
 }
