@@ -12,7 +12,7 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string newName, Weapon &newWeapon) : weaponA(&newWeapon), name(newName)
+HumanA::HumanA(std::string newName, Weapon &newWeapon) : _weaponA(&newWeapon), _name(newName)
 {
 	return ;
 }
@@ -24,5 +24,5 @@ HumanA::~HumanA(void)
 
 void	HumanA::attack(void)
 {
-	std::cout << this->name << " attacks with their " << this->weaponA->getType() << std::endl;
+	std::cout << this->_name << " attacks with their " << this->_weaponA->getType() << std::endl;
 }

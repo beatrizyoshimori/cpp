@@ -20,13 +20,12 @@
 class HumanB
 {
 	private:
-		Weapon *weaponB;
-		std::string	name;
+		Weapon 		*_weaponB;
+		std::string	_name;
 
 	public:
 		HumanB(std::string newName);
 		~HumanB(void);
-
 
 		void	attack(void);
 		void	setWeapon(Weapon &newWeapon);

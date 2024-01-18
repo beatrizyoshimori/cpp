@@ -18,7 +18,8 @@
 class Harl
 {
 	private:
-		std::pair<std::string, void (Harl::*)(void)> levels[4];
+		std::pair<std::string, void (Harl::*)(void)> _levels[4];
+
 		void	debug(void);
 		void	info(void);
 		void	warning(void);

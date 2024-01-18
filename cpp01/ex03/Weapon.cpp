@@ -29,10 +29,10 @@ Weapon::~Weapon(void)
 
 std::string	Weapon::getType(void)
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void	Weapon::setType(std::string newType)
 {
-	this->type = newType;
+	this->_type = newType;
 }

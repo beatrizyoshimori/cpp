@@ -20,8 +20,8 @@
 class	HumanA
 {
 	private:
-		Weapon *weaponA;
-		std::string	name;
+		Weapon 		*_weaponA;
+		std::string	_name;
 
 	public:
 		HumanA(std::string newName, Weapon &newWeapon);

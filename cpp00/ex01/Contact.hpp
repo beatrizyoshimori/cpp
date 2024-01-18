@@ -18,6 +18,13 @@
 
 class	Contact
 {
+	private:
+		std::string	_firstName;
+		std::string	_lastName;
+		std::string	_nickname;
+		std::string	_phoneNumber;
+		std::string	_darkestSecret;
+
 	public:
 		Contact(void);
 		~Contact(void);
@@ -30,13 +37,6 @@ class	Contact
 		void		printPhonebookContact(void);
 		void		printContactInfo(void);
 		std::string	truncateInfo(std::string info);
-
-	private:
-		std::string	_firstName;
-		std::string	_lastName;
-		std::string	_nickname;
-		std::string	_phoneNumber;
-		std::string	_darkestSecret;
 };
 
 #endif

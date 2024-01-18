@@ -30,6 +30,10 @@
 
 class	PhoneBook
 {
+	private:
+		Contact	_contacts[8];
+		int		_index;
+
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
@@ -38,10 +42,6 @@ class	PhoneBook
 
 		void	addContact();
 		void	searchContact();
-
-	private:
-		Contact	_contacts[8];
-		int		_index;
 };
 
 #endif

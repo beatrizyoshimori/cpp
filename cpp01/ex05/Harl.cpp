@@ -14,10 +14,10 @@
 
 Harl::Harl(void)
 {
-	this->levels[0] = std::make_pair("DEBUG", &Harl::debug);
-	this->levels[1] = std::make_pair("INFO", &Harl::info);
-	this->levels[2] = std::make_pair("WARNING", &Harl::warning);
-	this->levels[3] = std::make_pair("ERROR", &Harl::error);
+	this->_levels[0] = std::make_pair("DEBUG", &Harl::debug);
+	this->_levels[1] = std::make_pair("INFO", &Harl::info);
+	this->_levels[2] = std::make_pair("WARNING", &Harl::warning);
+	this->_levels[3] = std::make_pair("ERROR", &Harl::error);
 	return ;
 }
 
@@ -55,9 +55,9 @@ void	Harl::complain( std::string level )
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (level == this->levels[i].first)
+		if (level == this->_levels[i].first)
 		{
-			(this->*levels[i].second)();
+			(this->*_levels[i].second)();
 			return ;
 		}
 	}

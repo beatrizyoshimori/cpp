@@ -19,21 +19,21 @@ Zombie::Zombie(void)
 
 Zombie::Zombie(std::string zombieName)
 {
-	this->name = zombieName;
-	std::cout << this->name << " created" << std::endl;
+	this->_name = zombieName;
+	std::cout << this->_name << " created" << std::endl;
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->name << " destroyed" << std::endl;
+	std::cout << this->_name << " destroyed" << std::endl;
 }
 
 void	Zombie::announce(void)
 {
-	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void	Zombie::setName(std::string zombieName)
 {
-	this->name = zombieName;
+	this->_name = zombieName;
 }

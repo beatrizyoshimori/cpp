@@ -21,7 +21,8 @@ class Harl
 {
 	private:
 		OPTIONS complain_level;
-		std::pair<const char *, void (Harl::*)(void)> levels[4];
+		std::pair<const char *, void (Harl::*)(void)> _levels[4];
+
 		void	debug(void);
 		void	info(void);
 		void	warning(void);
