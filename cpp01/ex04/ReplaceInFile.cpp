@@ -14,34 +14,32 @@
 
 ReplaceInFile::ReplaceInFile(char **argv)
 {
-	this->infile_name = argv[1];
-	this->infile.open(this->infile_name, std::ifstream::in);
-	if (infile.rdstate())
+	this->_infile_name = argv[1];
+	this->_infile.open(this->_infile_name, std::ifstream::in);
+	if (_infile.rdstate())
 	{
 		std::cout << "Could not open file!" << std::endl;
-		this->infile.close();
 		exit(1);
 	}
 	std::string	filename(argv[1]);
 	filename += ".replace";
-	this->outfile_name = &filename[0];
-	this->outfile.open(this->outfile_name, std::ofstream::out);
+	this->_outfile_name = &filename[0];
+	this->_outfile.open(this->_outfile_name, std::ofstream::out);
 }
 
 ReplaceInFile::~ReplaceInFile()
 {
-	this->infile.close();
-	this->outfile.close();
+	this->_infile.close();
+	this->_outfile.close();
 	return ;
 }
-
 
 void	ReplaceInFile::replace_string(char **argv)
 {
 	std::string	line;
 	size_t		position;
 
-	while (std::getline(this->infile, line))
+	while (std::getline(this->_infile, line))
 	{
 		if (strcmp(argv[2], argv[3]) != 0)
 		{
@@ -53,7 +51,7 @@ void	ReplaceInFile::replace_string(char **argv)
 				position = line.find(argv[2]);
 			}
 		}
-		this->outfile << line;
-		this->outfile << std::endl;
+		this->_outfile << line;
+		this->_outfile << std::endl;
 	}
 }

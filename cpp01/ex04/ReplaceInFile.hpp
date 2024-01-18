@@ -22,10 +22,10 @@
 class ReplaceInFile
 {
 	private:
-		std::ifstream	infile;
-		std::ofstream	outfile;
-		char			*infile_name;
-		char			*outfile_name;
+		std::ifstream	_infile;
+		std::ofstream	_outfile;
+		char			*_infile_name;
+		char			*_outfile_name;
 
 	public:
 		ReplaceInFile(char **argv);
