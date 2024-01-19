@@ -22,6 +22,7 @@ int	main(void)
 	ScavTrap	c("C");
 	FragTrap	d("D");
 	DiamondTrap	e("E");
+	DiamondTrap f;
 
 	a.getStatus();
 	b.getStatus();
@@ -53,4 +54,5 @@ int	main(void)
 	d.getStatus();
 	e.getStatus();
 	e.whoAmI();
+	f.whoAmI();
 }
