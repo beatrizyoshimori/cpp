@@ -18,10 +18,12 @@ int	main(void)
 	ClapTrap	a("A");
 	ClapTrap	b("B");
 	ScavTrap	c("C");
+	ScavTrap	d;
 
 	a.getStatus();
 	b.getStatus();
 	c.getStatus();
+	d.getStatus();
 	
 	a.attack("B");
 	b.takeDamage(a.getAttackDamage());
@@ -31,8 +33,11 @@ int	main(void)
 	c.guardGate();
 	b.attack("C");
 	c.takeDamage(b.getAttackDamage());
+	c.beRepaired(10);
+	d.guardGate();
 
 	a.getStatus();
 	b.getStatus();
 	c.getStatus();
+	d.getStatus();
 }
