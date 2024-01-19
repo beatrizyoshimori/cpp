@@ -5,31 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 19:17:05 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/06 21:51:08 by byoshimo         ###   ########.fr       */
+/*   Created: 2023/12/04 19:51:14 by byoshimo          #+#    #+#             */
+/*   Updated: 2023/12/06 22:05:12 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
-	this->name = "";
-	ClapTrap::type = "ScavTrap";
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+	this->_name = "Default";
+	this->_type = "ScavTrap";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 	return ;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	std::cout << "ScavTrap constructor called" << std::endl;
-	this->type = "ScavTrap";
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+	this->_type = "ScavTrap";
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 	return ;
 }
 
@@ -45,10 +45,11 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap &obj)
 	std::cout << "ScavTrap copy assignment operator called" << std::endl;
 	if (this != &obj)
 	{
-		this->name = obj.getName();
-		this->hitPoints = obj.getHitPoints();
-		this->energyPoints = obj.getEnergyPoints();
-		this->attackDamage = obj.getAttackDamage();
+		this->_name = obj.getName();
+		this->_type = obj.getType();
+		this->_hitPoints = obj.getHitPoints();
+		this->_energyPoints = obj.getEnergyPoints();
+		this->_attackDamage = obj.getAttackDamage();
 	}
 	return (*this);
 }
@@ -61,9 +62,9 @@ ScavTrap::~ScavTrap(void)
 
 void	ScavTrap::attack(const std::string& target)
 {
-	if (this->hitPoints < 1 || this->energyPoints < 1)
+	if (this->_hitPoints < 1 || this->_energyPoints < 1)
 		return ;
-	this->energyPoints--;
+	this->_energyPoints--;
 	std::cout << "ScavTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 }
 
