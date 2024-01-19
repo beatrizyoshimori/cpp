@@ -61,7 +61,7 @@ void	Harl::set_level(char *parameter)
 	{
 		if (!strcmp(parameter, this->_levels[i].first))
 		{
-			this->complain_level = (OPTIONS)i;
+			this->_complain_level = (OPTIONS)i;
 			return ;
 		}
 	}
@@ -69,7 +69,7 @@ void	Harl::set_level(char *parameter)
 
 void	Harl::complain(void)
 {
-	switch (this->complain_level)
+	switch (this->_complain_level)
 	{
 	case DEBUG:
 	{

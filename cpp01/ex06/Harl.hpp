@@ -15,12 +15,12 @@
 
 #include <iostream>
 
-enum	OPTIONS { DEBUG, INFO, WARNING, ERROR};
+enum	OPTIONS { DEBUG, INFO, WARNING, ERROR };
 
 class Harl
 {
 	private:
-		OPTIONS complain_level;
+		OPTIONS _complain_level;
 		std::pair<const char *, void (Harl::*)(void)> _levels[4];
 
 		void	debug(void);

@@ -16,7 +16,8 @@ int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		std::cout << "Usage: " << std::endl << "./harlFilter <complain_level>" << std::endl;
+		std::cout << "Usage: " << std::endl << "./harlFilter <complain_level>" << std::endl
+			<< "Complain levels: DEBUG, INFO, WARNING and ERROR" << std::endl;
 		return (1);
 	}
 	Harl	h = Harl(argv[1]);
