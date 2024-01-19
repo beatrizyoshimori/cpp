@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 19:49:45 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/06 22:03:24 by byoshimo         ###   ########.fr       */
+/*   Created: 2023/12/04 19:48:19 by byoshimo          #+#    #+#             */
+/*   Updated: 2023/12/06 22:03:34 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,22 @@
 ClapTrap::ClapTrap(void)
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
-	this->name = "";
-	this->type = "ClapTrap";
-	this->hitPoints = 10;
-	this->energyPoints = 10;
-	this->attackDamage = 0;
+	this->_name = "Default";
+	this->_type = "ClapTrap";
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 	return ;
 }
 
 ClapTrap::ClapTrap(std::string name)
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
-	this->name = name;
-	this->type = "ClapTrap";
-	this->hitPoints = 10;
-	this->energyPoints = 10;
-	this->attackDamage = 0;
+	this->_name = name;
+	this->_type = "ClapTrap";
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 	return ;
 }
 
@@ -46,10 +46,11 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap &obj)
 	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 	if (this != &obj)
 	{
-		this->name = obj.getName();
-		this->hitPoints = obj.getHitPoints();
-		this->energyPoints = obj.getEnergyPoints();
-		this->attackDamage = obj.getAttackDamage();
+		this->_name = obj.getName();
+		this->_type = obj.getType();
+		this->_hitPoints = obj.getHitPoints();
+		this->_energyPoints = obj.getEnergyPoints();
+		this->_attackDamage = obj.getAttackDamage();
 	}
 	return (*this);
 }
@@ -62,56 +63,61 @@ ClapTrap::~ClapTrap()
 
 std::string	ClapTrap::getName(void) const
 {
-	return (this->name);
+	return (this->_name);
+}
+
+std::string	ClapTrap::getType(void) const
+{
+	return (this->_type);
 }
 
 unsigned int	ClapTrap::getHitPoints(void) const
 {
-	return (this->hitPoints);
+	return (this->_hitPoints);
 }
 
 unsigned int	ClapTrap::getEnergyPoints(void) const
 {
-	return (this->energyPoints);
+	return (this->_energyPoints);
 }
 
 unsigned int	ClapTrap::getAttackDamage(void) const
 {
-	return (this->attackDamage);
+	return (this->_attackDamage);
 }
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (this->hitPoints < 1 || this->energyPoints < 1)
+	if (this->_hitPoints < 1 || this->_energyPoints < 1)
 		return ;
-	this->energyPoints--;
+	this->_energyPoints--;
 	std::cout << "ClapTrap " << this->getName() << " attacks " << target << ", causing " << this->getAttackDamage() << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->hitPoints < 1)
+	if (this->_hitPoints < 1)
 	{
-		std::cout << this->type << " " << this->getName() << " is dead and took 0 points of damage" << std::endl;
+		std::cout << this->getType() << " " << this->getName() << " is dead and took 0 points of damage" << std::endl;
 		return ;
 	}
-	else if (this->hitPoints < amount)
+	else if (this->_hitPoints < amount)
 	{
-		std::cout << this->type << " " << this->getName() << " took " << this->hitPoints << " points of damage and died" << std::endl;
-		this->hitPoints = 0;
+		std::cout << this->getType() << " " << this->getName() << " took " << this->_hitPoints << " points of damage and died" << std::endl;
+		this->_hitPoints = 0;
 		return ;
 	}
-	this->hitPoints -= amount;
-	std::cout << this->type << " " << this->getName() << " took " << amount << " points of damage" << std::endl;
+	this->_hitPoints -= amount;
+	std::cout << this->getType() << " " << this->getName() << " took " << amount << " points of damage" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (this->hitPoints < 1 || this->energyPoints < 1)
+	if (this->_hitPoints < 1 || this->_energyPoints < 1)
 		return ;
-	this->hitPoints += amount;
-	this->energyPoints--;
-	std::cout << "ClapTrap " << this->getName() << " was repaired, getting " << amount << " hit points back" << std::endl;
+	this->_hitPoints += amount;
+	this->_energyPoints--;
+	std::cout << this->getType() << " " << this->getName() << " was repaired, getting " << amount << " hit points back" << std::endl;
 }
 
 void	ClapTrap::getStatus(void)
