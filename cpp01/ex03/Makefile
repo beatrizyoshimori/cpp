@@ -21,10 +21,10 @@ all:					$(NAME)
 
 $(OBJECTS_PATH)%.o:		%.cpp $(HEADERS)
 						@mkdir -p $(dir $@)
-						$(CC) $(FLAGS) -c $< -o $@
+						@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):				$(OBJECTS)
-						$(CC) $(FLAGS) $(OBJECTS) -o $@
+						@$(CC) $(FLAGS) $(OBJECTS) -o $@
 						@echo "\033[32mUnnecessary violence compiled!\033[0m"
 
 clean:
