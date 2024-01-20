@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:46:54 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/22 20:10:50 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/20 17:19:05 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ HumanB::~HumanB(void)
 
 void	HumanB::attack(void)
 {
+	if (this->_weaponB == NULL)
+	{
+		std::cout << this->_name << " attacks without a weapon" << std::endl;
+		return ;
+	}
 	std::cout << this->_name << " attacks with their " << this->_weaponB->getType() << std::endl;
 }
 
