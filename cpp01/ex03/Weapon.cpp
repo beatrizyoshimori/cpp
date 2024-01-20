@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:39:34 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/21 22:21:09 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:24:47 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Weapon::~Weapon(void)
 	return ;
 }
 
-std::string	Weapon::getType(void)
+const std::string	Weapon::getType(void) const
 {
 	return (this->_type);
 }

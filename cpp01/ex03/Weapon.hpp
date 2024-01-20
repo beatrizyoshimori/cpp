@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 21:32:38 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/21 22:20:51 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:23:57 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Weapon
 		Weapon(std::string type);
 		~Weapon(void);
 
-		std::string	getType(void);
+		const std::string	getType(void) const;
 		void		setType(std::string newType);
 };
 
