@@ -6,15 +6,9 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 20:16:00 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/25 18:53:51 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/20 16:25:59 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// #include <iostream>
-// #include <fstream>
-// #include <string>
-// #include <cstring>
-// #include <cstdlib>
 
 #include "ReplaceInFile.hpp"
 
