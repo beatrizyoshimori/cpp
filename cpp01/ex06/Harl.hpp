@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 18:59:01 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/11/25 19:06:15 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:06:58 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define HARL_HPP
 
 #include <iostream>
+#include <cstring>
 
 enum	OPTIONS { DEBUG, INFO, WARNING, ERROR };
 
