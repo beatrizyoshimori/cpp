@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public virtual ClapTrap
+class FragTrap : public ClapTrap
 {
 	protected:
 		const static int HIT_POINTS = 100;

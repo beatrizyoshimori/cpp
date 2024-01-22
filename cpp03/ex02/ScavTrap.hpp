@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public virtual ClapTrap
+class ScavTrap : public ClapTrap
 {
 	protected:
 		const static int HIT_POINTS = 100;
