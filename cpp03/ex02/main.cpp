@@ -20,12 +20,16 @@ int	main(void)
 	ClapTrap	b("B");
 	ScavTrap	c("C");
 	FragTrap	d("D");
+	FragTrap	e;
 
+	std::cout << std::endl;
 	a.getStatus();
 	b.getStatus();
 	c.getStatus();
 	d.getStatus();
-	
+	e.getStatus();
+
+	std::cout << "-----------" << std::endl;
 	a.attack("B");
 	b.takeDamage(a.getAttackDamage());
 	b.attack("D");
@@ -39,9 +43,13 @@ int	main(void)
 	d.highFivesGuys();
 	b.beRepaired(1);
 	c.guardGate();
+	d.beRepaired(5);
+	e.highFivesGuys();
+	std::cout << "-----------" << std::endl << std::endl;
 
 	a.getStatus();
 	b.getStatus();
 	c.getStatus();
 	d.getStatus();
+	e.getStatus();
 }

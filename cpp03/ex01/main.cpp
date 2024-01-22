@@ -20,14 +20,18 @@ int	main(void)
 	ScavTrap	c("C");
 	ScavTrap	d;
 
+	std::cout << std::endl;
 	a.getStatus();
 	b.getStatus();
 	c.getStatus();
 	d.getStatus();
-	
+
+	std::cout << "-----------" << std::endl;
 	a.attack("B");
 	b.takeDamage(a.getAttackDamage());
 	b.beRepaired(1);
+	c.attack("A");
+	a.takeDamage(c.getAttackDamage());
 	c.attack("A");
 	a.takeDamage(c.getAttackDamage());
 	c.guardGate();
@@ -35,6 +39,7 @@ int	main(void)
 	c.takeDamage(b.getAttackDamage());
 	c.beRepaired(10);
 	d.guardGate();
+	std::cout << "-----------" << std::endl << std::endl;
 
 	a.getStatus();
 	b.getStatus();

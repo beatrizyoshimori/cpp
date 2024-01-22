@@ -21,15 +21,19 @@ int	main(void)
 	ClapTrap	b("B");
 	ScavTrap	c("C");
 	FragTrap	d("D");
+	std::cout << std::endl << "DiamondTrap constructors:" << std::endl;
 	DiamondTrap	e("E");
 	DiamondTrap f;
 
+	std::cout << std::endl;
 	a.getStatus();
 	b.getStatus();
 	c.getStatus();
 	d.getStatus();
 	e.getStatus();
-	
+	f.getStatus();
+
+	std::cout << "-----------" << std::endl;
 	a.attack("B");
 	b.takeDamage(a.getAttackDamage());
 	b.attack("D");
@@ -47,12 +51,17 @@ int	main(void)
 	e.takeDamage(d.getAttackDamage());
 	e.attack("D");
 	d.takeDamage(e.getAttackDamage());
+	f.attack("E");
+	e.takeDamage(f.getAttackDamage());
+	std::cout << "-----------" << std::endl << std::endl;
 
 	a.getStatus();
 	b.getStatus();
 	c.getStatus();
 	d.getStatus();
 	e.getStatus();
+	f.getStatus();
 	e.whoAmI();
 	f.whoAmI();
+	std::cout << std::endl;
 }
