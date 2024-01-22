@@ -122,7 +122,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 void	ClapTrap::getStatus(void)
 {
-	std::cout << this->getName() << " status:" << std::endl
+	std::cout << this->getType() <<  " " << this->getName() << " status:" << std::endl
 		<< "Hit points: " << this->getHitPoints() << std::endl
 		<< "Energy points: " << this->getEnergyPoints() << std::endl
 		<< "Attack damage: " << this->getAttackDamage() << std::endl << std::endl;
