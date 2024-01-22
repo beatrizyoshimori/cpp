@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << "ScavTrap default constructor called" << std::endl;
 	this->_name = "Default";
 	this->_type = "ScavTrap";
 	this->_hitPoints = 100;
