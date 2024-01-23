@@ -18,9 +18,6 @@
 
 class	Animal
 {
-	private:
-		virtual void	f(void) = 0;
-
 	protected:
 		std::string	type;
 
@@ -31,7 +28,7 @@ class	Animal
 		virtual ~Animal(void);
 
 		std::string		getType(void) const;
-		virtual void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 };
 
 #endif

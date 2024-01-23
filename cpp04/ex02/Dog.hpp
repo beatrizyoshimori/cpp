@@ -22,7 +22,6 @@ class Dog : public Animal
 {
 	private:
 		Brain	*_mind;
-		void	f(void);
 
 	public:
 		Dog(void);

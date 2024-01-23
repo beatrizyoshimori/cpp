@@ -46,8 +46,3 @@ void	Cat::makeSound(void) const
 {
 	std::cout << "Meow!" << std::endl;
 }
-
-void	Cat::f(void)
-{
-	return ;
-}
