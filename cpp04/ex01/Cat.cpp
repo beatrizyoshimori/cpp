@@ -41,3 +41,8 @@ Cat::~Cat()
 	delete (this->_mind);
 	return ;
 }
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "Meow!" << std::endl;
+}

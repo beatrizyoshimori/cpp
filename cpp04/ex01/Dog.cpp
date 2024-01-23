@@ -41,3 +41,8 @@ Dog::~Dog()
 	delete (this->_mind);
 	return ;
 }
+
+void	Dog::makeSound(void) const
+{
+	std::cout << "Woof!" << std::endl;
+}

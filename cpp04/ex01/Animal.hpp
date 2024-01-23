@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:02:34 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/13 21:54:41 by byoshimo         ###   ########.fr       */
+/*   Updated: 2023/12/13 20:10:55 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class	Animal
 		Animal& operator=(const Animal &obj);
 		virtual ~Animal(void);
 
-		std::string	getType(void) const;
-		void		makeSound(void) const;
+		std::string		getType(void) const;
+		virtual void	makeSound(void) const;
 };
 
 #endif
