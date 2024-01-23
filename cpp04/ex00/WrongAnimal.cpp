@@ -47,10 +47,5 @@ std::string WrongAnimal::getType(void) const
 
 void	WrongAnimal::makeSound(void) const
 {
-	if (this->getType() == "Cat")
-		std::cout << "Wrong Meow!" << std::endl;
-	else if (this->getType() == "Dog")
-		std::cout << "Wrong Woof!" << std::endl;
-	else
-		std::cout << "Generic wrong animal sound!" << std::endl;
+	std::cout << "Generic wrong animal sound!" << std::endl;
 }

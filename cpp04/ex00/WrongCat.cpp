@@ -39,3 +39,8 @@ WrongCat::~WrongCat()
 	std::cout << "Wrong Cat destructor called" << std::endl;
 	return ;
 }
+
+void	WrongCat::makeSound(void) const
+{
+	std::cout << "Wrong meow!" << std::endl;
+}
