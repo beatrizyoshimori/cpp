@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:53:01 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/06 22:04:20 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:04:06 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	std::cout << "FragTrap default constructor called" << std::endl;
+	std::cout << YELLOW << "FragTrap default constructor called" << RESET << std::endl;
 	this->_name = "Default";
 	this->_type = "FragTrap";
 	this->_hitPoints = 100;
@@ -25,7 +25,7 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "FragTrap constructor called" << std::endl;
+	std::cout << YELLOW << "FragTrap constructor called" << RESET << std::endl;
 	this->_type = "FragTrap";
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
@@ -35,14 +35,14 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap &obj) : ClapTrap(obj.getName())
 {
-	std::cout << "FragTrap copy constructor called" << std::endl;
+	std::cout << YELLOW << "FragTrap copy constructor called" << RESET << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 FragTrap&	FragTrap::operator=(const FragTrap &obj)
 {
-	std::cout << "FragTrap copy assignment operator called" << std::endl;
+	std::cout << YELLOW << "FragTrap copy assignment operator called" << RESET << std::endl;
 	if (this != &obj)
 	{
 		this->_name = obj.getName();
@@ -56,7 +56,7 @@ FragTrap&	FragTrap::operator=(const FragTrap &obj)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	std::cout << YELLOW << "FragTrap destructor called" << RESET << std::endl;
 	return ;
 }
 

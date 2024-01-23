@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 19:51:14 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/06 22:05:12 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:20:49 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(void) : ClapTrap()
 {
-	std::cout << "ScavTrap default constructor called" << std::endl;
+	std::cout << GREEN << "ScavTrap default constructor called" << RESET << std::endl;
 	this->_name = "Default";
 	this->_type = "ScavTrap";
 	this->_hitPoints = 100;
@@ -25,7 +25,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "ScavTrap constructor called" << std::endl;
+	std::cout << GREEN << "ScavTrap constructor called" << RESET << std::endl;
 	this->_type = "ScavTrap";
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
@@ -35,14 +35,14 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap &obj) : ClapTrap(obj.getName())
 {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
+	std::cout << GREEN << "ScavTrap copy constructor called" << RESET << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap &obj)
 {
-	std::cout << "ScavTrap copy assignment operator called" << std::endl;
+	std::cout << GREEN << "ScavTrap copy assignment operator called" << RESET << std::endl;
 	if (this != &obj)
 	{
 		this->_name = obj.getName();
@@ -56,7 +56,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap &obj)
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << GREEN << "ScavTrap destructor called" << RESET << std::endl;
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 19:17:00 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/06 21:53:42 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:24:20 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,9 @@ int	main(void)
 	e.getStatus();
 	f.getStatus();
 	e.whoAmI();
+	f.whoAmI();
+
+	f = e;
 	f.whoAmI();
 	std::cout << std::endl;
 }
