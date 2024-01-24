@@ -17,11 +17,6 @@
 
 class ScavTrap : public ClapTrap
 {
-	protected:
-		const static int HIT_POINTS = 100;
-		const static int ENERGY_POINTS = 50;
-		const static int ATTACK_DAMAGE = 20;
-
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);

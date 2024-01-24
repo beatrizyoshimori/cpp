@@ -17,11 +17,6 @@
 
 class FragTrap : public ClapTrap
 {
-	protected:
-		const static int HIT_POINTS = 100;
-		const static int ENERGY_POINTS = 100;
-		const static int ATTACK_DAMAGE = 30;
-
 	public:
 		FragTrap(void);
 		FragTrap(std::string name);
