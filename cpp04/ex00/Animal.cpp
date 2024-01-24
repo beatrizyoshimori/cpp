@@ -15,7 +15,7 @@
 Animal::Animal(void)
 {
 	std::cout << "Animal default constructor called" << std::endl;
-	this->type = "";
+	this->_type = "";
 	return ;
 }
 
@@ -30,7 +30,7 @@ Animal&	Animal::operator=(const Animal &obj)
 {
 	std::cout << "Animal copy assignment operator called" << std::endl;
 	if (this != &obj)
-		this->type = obj.getType();
+		this->_type = obj.getType();
 	return (*this);
 }
 
@@ -42,7 +42,7 @@ Animal::~Animal()
 
 std::string Animal::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
 void	Animal::makeSound(void) const

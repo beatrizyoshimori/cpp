@@ -15,7 +15,7 @@
 Cat::Cat(void) : Animal()
 {
 	std::cout << "Cat default constructor called" << std::endl;
-	this->type = "Cat";
+	this->_type = "Cat";
 	return ;
 }
 
@@ -30,7 +30,7 @@ Cat&	Cat::operator=(const Cat &obj)
 {
 	std::cout << "Cat copy assignment operator called" << std::endl;
 	if (this != &obj)
-		this->type = obj.getType();
+		this->_type = obj.getType();
 	return (*this);
 }
 

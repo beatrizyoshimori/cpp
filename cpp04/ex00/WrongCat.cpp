@@ -15,7 +15,7 @@
 WrongCat::WrongCat(void)
 {
 	std::cout << "Wrong Cat default constructor called" << std::endl;
-	this->type = "Cat";
+	this->_type = "Cat";
 	return ;
 }
 
@@ -30,7 +30,7 @@ WrongCat&	WrongCat::operator=(const WrongCat &obj)
 {
 	std::cout << "Wrong Cat copy assignment operator called" << std::endl;
 	if (this != &obj)
-		this->type = obj.getType();
+		this->_type = obj.getType();
 	return (*this);
 }
 
