@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:02:24 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/13 19:41:36 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:11:02 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(void)
+AAnimal::AAnimal(void)
 {
-	std::cout << "Animal default constructor called" << std::endl;
-	this->type = "";
+	std::cout << "AAnimal default constructor called" << std::endl;
+	this->_type = "";
 	return ;
 }
 
-Animal::Animal(const Animal &obj)
+AAnimal::AAnimal(const AAnimal &obj)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "AAnimal copy constructor called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
-Animal&	Animal::operator=(const Animal &obj)
+AAnimal&	AAnimal::operator=(const AAnimal &obj)
 {
-	std::cout << "Animal copy assignment operator called" << std::endl;
+	std::cout << "AAnimal copy assignment operator called" << std::endl;
 	if (this != &obj)
-		this->type = obj.getType();
+		this->_type = obj.getType();
 	return (*this);
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "AAnimal destructor called" << std::endl;
 	return ;
 }
 
-std::string Animal::getType(void) const
+std::string AAnimal::getType(void) const
 {
-	return (this->type);
+	return (this->_type);
 }
 
-void	Animal::makeSound(void) const
+void	AAnimal::makeSound(void) const
 {
 	std::cout << "Generic animal sound!" << std::endl;
 }

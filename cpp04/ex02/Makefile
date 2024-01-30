@@ -7,12 +7,12 @@ RM				=		rm -rf
 OBJECTS_PATH	=		objects/
 
 SOURCES			=		main.cpp \
-						Animal.cpp \
+						AAnimal.cpp \
 						Cat.cpp \
 						Dog.cpp \
 						Brain.cpp
 
-HEADERS			=		Animal.hpp \
+HEADERS			=		AAnimal.hpp \
 						Cat.hpp \
 						Dog.hpp \
 						Brain.hpp

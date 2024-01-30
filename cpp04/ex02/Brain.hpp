@@ -19,13 +19,16 @@
 class	Brain
 {
 	private:
-		std::string	ideas[100];
+		std::string	_ideas[100];
 
 	public:
 		Brain(void);
 		Brain(const Brain &obj);
 		Brain& operator=(const Brain &obj);
 		virtual ~Brain(void);
+
+		std::string	getIdea(int index) const;
+		void		setIdea(int index, std::string idea);
 };
 
 #endif
