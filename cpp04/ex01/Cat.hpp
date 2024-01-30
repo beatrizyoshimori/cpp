@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:16:37 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/13 21:25:52 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:50:58 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Cat : public Animal
 {
 	private:
-		Brain	*_mind;
+		Brain	*_brain;
 
 	public:
 		Cat(void);
@@ -29,8 +29,10 @@ class Cat : public Animal
 		Cat& operator=(const Cat &obj);
 		~Cat(void);
 
-		Brain*	getBrain(void) const;
-		void	makeSound(void) const;
+		void		makeSound(void) const;
+		Brain*		getBrain(void) const;
+		std::string	getBrainIdea(int index) const;
+		void		setBrainIdea(int index, std::string idea);
 };
 
 #endif

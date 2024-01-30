@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:09:04 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/13 21:27:02 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:51:16 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 class Dog : public Animal
 {
 	private:
-		Brain	*_mind;
+		Brain	*_brain;
 
 	public:
 		Dog(void);
@@ -30,6 +30,9 @@ class Dog : public Animal
 		~Dog(void);
 
 		void	makeSound(void) const;
+		Brain*	getBrain(void) const;
+		std::string	getBrainIdea(int index) const;
+		void		setBrainIdea(int index, std::string idea);
 };
 
 #endif
