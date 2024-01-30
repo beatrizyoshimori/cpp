@@ -15,7 +15,7 @@
 Dog::Dog(void) : Animal()
 {
 	std::cout << "Dog default constructor called" << std::endl;
-	this->type = "Dog";
+	this->_type = "Dog";
 	this->_mind = new Brain();
 	return ;
 }
@@ -31,7 +31,7 @@ Dog&	Dog::operator=(const Dog &obj)
 {
 	std::cout << "Dog copy assignment operator called" << std::endl;
 	if (this != &obj)
-		this->type = obj.getType();
+		this->_type = obj.getType();
 	return (*this);
 }
 
