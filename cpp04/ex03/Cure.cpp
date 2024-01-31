@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 12:17:22 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/21 16:05:08 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:49:56 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cure&	Cure::operator=(const Cure &obj)
 {
 	std::cout << "Cure copy assignment operator called" << std::endl;
 	if (this != &obj)
-		this->type = obj.getType();
+		this->_type = obj.getType();
 	return (*this);
 }
 
