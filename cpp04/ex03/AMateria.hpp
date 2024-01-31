@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:52:12 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/15 22:00:32 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:41:00 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ICharacter;
 class AMateria
 {
 	protected:
-		std::string	type;
+		std::string	_type;
 
 	public:
 		AMateria(std::string const & type);
@@ -34,7 +34,7 @@ class AMateria
 
 		std::string const &	getType() const;
 		virtual AMateria*	clone() const = 0;
-		virtual void use(ICharacter& target);
+		virtual void 		use(ICharacter& target);
 };
 
 #endif
