@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:22:54 by byoshimo          #+#    #+#             */
-/*   Updated: 2023/12/21 16:18:45 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/30 21:44:40 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ class Character : public ICharacter
 		void	equip(AMateria* m);
 		void	unequip(int idx);
 		void	use(int idx, ICharacter& target);
+
+		void	initInventory(void);
 };
 
 #endif
