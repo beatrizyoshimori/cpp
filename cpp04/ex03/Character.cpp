@@ -6,11 +6,13 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:22:51 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/30 21:45:16 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/01/31 21:50:28 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
 
 Character::Character(void) : ICharacter(), _name("")
 {
@@ -32,7 +34,17 @@ Character::Character(const Character &obj)
 {
 	std::cout << "Character copy constructor called" << std::endl;
 	if (this != &obj)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			// if (this->getAMateria(i))
+			// 	delete (this->_inventory[i]);
+			this->_inventory[i] = NULL;
+		}
 		*this = obj;
+		// for (int i = 0; i < 4; i++)
+		// 	this->_inventory[i] = new Cure(obj._inventory[i]);
+	}
 }
 
 Character&	Character::operator=(const Character &obj)
@@ -60,7 +72,8 @@ Character::~Character()
 	std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		delete (this->_inventory[i]);
+		if (this->getAMateria(i))
+			delete (this->_inventory[i]);
 		this->_inventory[i] = NULL;
 	}
 	return ;
