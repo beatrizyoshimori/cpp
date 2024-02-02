@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 15:22:51 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/31 21:50:28 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:35:44 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@
 Character::Character(void) : ICharacter(), _name("")
 {
 	std::cout << "Character default constructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = NULL;
+	this->initInventory();
 	return ;
 }
 
 Character::Character(std::string name) : ICharacter(), _name(name)
 {
 	std::cout << "Character constructor called" << std::endl;
-	for (int i = 0; i < 4; i++)
-		this->_inventory[i] = NULL;
+	this->initInventory();
 	return ;
 }
 
@@ -35,15 +33,8 @@ Character::Character(const Character &obj)
 	std::cout << "Character copy constructor called" << std::endl;
 	if (this != &obj)
 	{
-		for (int i = 0; i < 4; i++)
-		{
-			// if (this->getAMateria(i))
-			// 	delete (this->_inventory[i]);
-			this->_inventory[i] = NULL;
-		}
+		this->initInventory();
 		*this = obj;
-		// for (int i = 0; i < 4; i++)
-		// 	this->_inventory[i] = new Cure(obj._inventory[i]);
 	}
 }
 
