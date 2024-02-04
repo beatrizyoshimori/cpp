@@ -20,12 +20,12 @@ Bureaucrat::Bureaucrat(void) : _name(""), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string newName, int newGrade) : _name(newName)
 {
+	std::cout << "Bureaucrat constructor called" << std::endl;
 	if (newGrade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (newGrade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade = newGrade;
-	std::cout << "Bureaucrat constructor called" << std::endl;
 	return ;
 }
 
@@ -87,8 +87,6 @@ void	Bureaucrat::signForm(Form &f)
 	f.beSigned(*this);
 	if (f.getIsSigned() == true)
 		std::cout << this->getName() << " signed " << f.getName() << std::endl;
-	else
-		std::cout << this->getName() << " couldn't sign " << f.getName() << " because the grade is too low" << std::endl;
 }
 
 
