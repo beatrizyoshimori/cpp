@@ -20,13 +20,13 @@ Form::Form(void) : _name(""), _isSigned(false), _gradeSign(150), _gradeExecute(1
 
 Form::Form(std::string newName, int toSign, int toExecute) : _name(newName), _isSigned(false), _gradeSign(150), _gradeExecute(150)
 {
+	std::cout << "Form constructor called" << std::endl;
 	if (toSign < 1 || toExecute < 1)
 		throw Form::GradeTooHighException();
 	else if (toSign > 150 || toExecute > 150)
 		throw Form::GradeTooLowException();
 	const_cast<int &>(this->_gradeSign) = toSign;
 	const_cast<int &>(this->_gradeExecute) = toExecute;
-	std::cout << "Form constructor called" << std::endl;
 	return ;
 }
 
@@ -78,13 +78,23 @@ int	Form::getGradeExecute(void) const
 
 void	Form::beSigned(const Bureaucrat &b)
 {
-	if (b.getGrade() <= this->getGradeSign())
-		this->_isSigned = true;
+	if (b.getGrade() > this->getGradeSign())
+	{
+		std::cout << b.getName() << " could't sign " << this->getName() << std::endl;
+		throw Form::GradeTooLowException();
+	}
+	this->_isSigned = true;
 }
 
 std::ostream& operator<<(std::ostream& lhs, const Form& obj)
 {
-	lhs << "Form " << obj.getName() << ", is signed? " << obj.getIsSigned() << ", grade required to sign: "
+	std::string	isSigned;
+
+	if (obj.getIsSigned() == true)
+		isSigned = "Yes";
+	else
+		isSigned = "No";
+	lhs << "Form " << obj.getName() << ", is signed? " << isSigned << ", grade required to sign: "
 		<< obj.getGradeSign() << ", grade required to execute: " << obj.getGradeExecute();
 	return (lhs);
 }
