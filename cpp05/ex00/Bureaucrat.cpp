@@ -20,12 +20,12 @@ Bureaucrat::Bureaucrat(void) : _name(""), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string newName, int newGrade) : _name(newName)
 {
+	std::cout << "Bureaucrat constructor called" << std::endl;
 	if (newGrade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (newGrade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade = newGrade;
-	std::cout << "Bureaucrat constructor called" << std::endl;
 	return ;
 }
 

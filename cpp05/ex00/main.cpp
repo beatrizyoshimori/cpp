@@ -23,6 +23,14 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	try
+	{
+		Bureaucrat	c("C", 0);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	std::cout << a << std::endl;
 	try
 	{
