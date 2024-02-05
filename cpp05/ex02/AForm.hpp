@@ -32,7 +32,7 @@ class AForm
 		AForm(std::string newName, int toSign, int toExecute);
 		AForm(const AForm &obj);
 		AForm& operator=(const AForm &obj);
-		~AForm(void);
+		virtual ~AForm(void);
 
 		class GradeTooHighException : public std::exception {
 			public:
