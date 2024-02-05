@@ -2,19 +2,19 @@
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("Shrubbery Form", 145, 137), _target("default")
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("Shrubbery Creation Form", 145, 137), _target("default")
 {
 	std::cout << "ShrubberyCreationForm default constructor called" << std::endl;
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery Form", 145, 137), _target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("Shrubbery Creation Form", 145, 137), _target(target)
 {
 	std::cout << "ShrubberyCreationForm constructor called" << std::endl;
 	return ;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm("Shrubbery Form", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : AForm("Shrubbery Creation Form", 145, 137)
 {
 	std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
 	if (this != &obj)
