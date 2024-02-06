@@ -75,6 +75,8 @@ void MateriaSource::learnMateria(AMateria* m)
 			return ;
 		}
 	}
+	std::cout << "Maximum number of materials learned" << std::endl;
+	delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)
