@@ -18,7 +18,7 @@ Ice::Ice(void) : AMateria("ice")
 	return ;
 }
 
-Ice::Ice(const Ice &obj)
+Ice::Ice(const Ice &obj) : AMateria("ice")
 {
 	std::cout << "Ice copy constructor called" << std::endl;
 	if (this != &obj)
