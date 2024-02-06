@@ -63,9 +63,11 @@ Character::~Character()
 	std::cout << "Character destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->getAMateria(i))
+		if (this->_inventory[i])
+		{
 			delete (this->_inventory[i]);
-		this->_inventory[i] = NULL;
+			this->_inventory[i] = NULL;
+		}
 	}
 	return ;
 }
@@ -84,24 +86,40 @@ AMateria *Character::getAMateria(int idx) const
 
 void	Character::equip(AMateria* m)
 {
-	for (int i = 0; i < 4; i++)
+	if (!m)
+		std::cout << "Invalid materia" << std::endl;
+	else
 	{
-		if (this->_inventory[i] == NULL)
+		for (int i = 0; i < 4; i++)
 		{
-			this->_inventory[i] = m;
-			return ;
+			if (this->_inventory[i] == NULL)
+			{
+				this->_inventory[i] = m;
+				return ;
+			}
 		}
+		std::cout << "Inventory full" << std::endl;
+		delete m;
 	}
 }
+
 void	Character::unequip(int idx)
 {
-	if (idx >= 0 && idx <=3 && this->_inventory[idx] != NULL)
+	if (idx < 0 || idx > 3)
+		std::cout << "Invalid index" << std::endl;
+	else if (this->_inventory[idx] == NULL)
+		std::cout << "Nothing to be unequipped" << std::endl;
+	else
 		this->_inventory[idx] = NULL;
 }
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (idx >= 0 && idx <=3 && this->_inventory[idx] != NULL)
+	if (idx < 0 || idx > 3)
+		std::cout << "Invalid index" << std::endl;
+	else if (this->_inventory[idx] == NULL)
+		std::cout << "Nothing to be used" << std::endl;
+	else
 		this->_inventory[idx]->use(target);
 }
 
