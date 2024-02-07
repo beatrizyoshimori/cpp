@@ -34,11 +34,11 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource &obj)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			if (this->_inventory[i])
-			{
-				delete (this->_inventory[i]);
-				this->_inventory[i] = NULL;
-			}
+			// if (this->_inventory[i])
+			// {
+			// 	delete (this->_inventory[i]);
+			// 	this->_inventory[i] = NULL;
+			// }
 			if (obj.getAMateria(i))
 				this->_inventory[i] = obj.getAMateria(i)->clone();
 		}
