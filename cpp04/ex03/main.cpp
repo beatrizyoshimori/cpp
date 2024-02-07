@@ -90,11 +90,22 @@ int main()
 		character->use(4, *character);
 
 		std::cout << std::endl << "Unequip materials:" << std::endl;
+		AMateria* tmp;
+		tmp = &(*dynamic_cast<Character *>(character)->getAMateria(0));
 		character->unequip(0);
+		delete tmp;
+		tmp = &(*dynamic_cast<Character *>(character)->getAMateria(1));
 		character->unequip(1);
+		delete tmp;
+		tmp = &(*dynamic_cast<Character *>(character)->getAMateria(2));
 		character->unequip(2);
+		delete tmp;
+		tmp = &(*dynamic_cast<Character *>(character)->getAMateria(3));
 		character->unequip(3);
+		delete tmp;
+		tmp = &(*dynamic_cast<Character *>(character)->getAMateria(4));
 		character->unequip(4);
+		delete tmp;
 
 		std::cout << std::endl << "Using the materials again (INVENTORY EMPTY):" << std::endl;
 		character->use(0, *character);
@@ -127,7 +138,7 @@ int main()
 		std::cout << std::endl;
 
 		MateriaSource	cpySrc = (*dynamic_cast<MateriaSource *>(src));
-		std::cout << "Copy:" << std::endl;
+		std::cout << std::endl << "Copy:" << std::endl;
 		any.equip(cpySrc.createMateria("ice"));
 		any.equip(cpySrc.createMateria("cure"));
 		any.use(0, any);
