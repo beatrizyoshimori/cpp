@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 19:02:02 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/30 19:49:36 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:34:25 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int	main(void)
 	Cat	cat;
 	for (int i = 0; i < 100; i++)
 		cat.setBrainIdea(i, "I want Whiskas!");
+	std::cout << "Cat ideias:" << std::endl;
 	for (int i = 0; i < 100; i++)
 		std::cout << cat.getBrainIdea(i) << std::endl;
 	std::cout << "---------" << std::endl;
@@ -52,11 +53,18 @@ int	main(void)
 	std::cout << Tom.getType() << std::endl;
 	for (int i = 0; i < 100; i++)
 		Tom.setBrainIdea(i, "I don't want Whiskas anymore!");
+	std::cout << "Tom ideas:" << std::endl;
 	for (int i = 0; i < 100; i++)
 		std::cout << Tom.getBrainIdea(i) << std::endl;
 	std::cout << "---------" << std::endl;
 
+	std::cout << "Cat ideias:" << std::endl;
+	for (int i = 0; i < 100; i++)
+		std::cout << cat.getBrainIdea(i) << std::endl;
+	std::cout << "---------" << std::endl;
+
 	Cat	MandaChuva(Tom);
+	std::cout << "MandaChuva ideas:" << std::endl;
 	for (int i = 0; i < 100; i++)
 		std::cout << MandaChuva.getBrainIdea(i) << std::endl;
 	return (0);

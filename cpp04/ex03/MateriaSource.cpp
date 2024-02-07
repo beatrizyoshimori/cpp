@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 18:10:27 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/01/31 19:25:15 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:51:17 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource &obj)
 	{
 		for (int i = 0; i < 4; i++)
 		{
-			// if (this->_inventory[i])
-			// {
-			// 	delete (this->_inventory[i]);
-			// 	this->_inventory[i] = NULL;
-			// }
 			if (obj.getAMateria(i))
 				this->_inventory[i] = obj.getAMateria(i)->clone();
 		}
@@ -51,7 +46,7 @@ MateriaSource::~MateriaSource()
 	std::cout << "MateriaSource destructor called" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->getAMateria(i))
+		if (this->_inventory[i])
 			delete (this->_inventory[i]);
 		this->_inventory[i] = NULL;
 	}

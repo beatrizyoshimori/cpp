@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:55:11 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/02/02 19:41:04 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/07 18:50:36 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,9 @@ int main()
 		IMateriaSource	*src = new MateriaSource();
 
 		src->learnMateria(new Ice());
+		src->learnMateria(new Ice());
+		src->learnMateria(new Cure());
+		src->learnMateria(new Cure());
 		src->learnMateria(new Cure());
 
 		std::cout << std::endl << "Original:" << std::endl;
@@ -137,10 +140,10 @@ int main()
 		bob.use(100, bob);
 		std::cout << std::endl;
 
-		MateriaSource	cpySrc = (*dynamic_cast<MateriaSource *>(src));
+		IMateriaSource	*cpySrc = new MateriaSource(*dynamic_cast<MateriaSource *>(src));
 		std::cout << std::endl << "Copy:" << std::endl;
-		any.equip(cpySrc.createMateria("ice"));
-		any.equip(cpySrc.createMateria("cure"));
+		any.equip(cpySrc->createMateria("ice"));
+		any.equip(cpySrc->createMateria("cure"));
 		any.use(0, any);
 		any.use(1, any);
 		any.use(2, any);
@@ -150,6 +153,7 @@ int main()
 		std::cout << std::endl;
 
 		delete src;
+		delete cpySrc;
 	}
 	return 0;
 }
