@@ -7,10 +7,10 @@ RM				=		rm -rf
 OBJECTS_PATH	=		objects/
 
 SOURCES			=		main.cpp \
-						scalarConverter.cpp \
+						ScalarConverter.cpp \
 						printTypes.cpp
 
-HEADERS			=		scalarConverter.hpp
+HEADERS			=		ScalarConverter.hpp
 
 OBJECTS			=		$(patsubst %.cpp, $(OBJECTS_PATH)%.o, $(SOURCES))
 

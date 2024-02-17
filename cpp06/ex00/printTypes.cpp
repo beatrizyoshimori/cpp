@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scalarConverter.hpp"
+#include "ScalarConverter.hpp"
 
 void	printChar(int c)
 {

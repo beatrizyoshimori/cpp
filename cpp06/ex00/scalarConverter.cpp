@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scalarConverter.cpp                                :+:      :+:    :+:   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,29 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scalarConverter.hpp"
+#include "ScalarConverter.hpp"
 
-scalarConverter::scalarConverter(void)
+ScalarConverter::ScalarConverter(void)
 {
 	std::cout << "ScalarConverter default constructor called" << std::endl;
 	return ;
 }
 
-scalarConverter::scalarConverter(const scalarConverter &obj)
+ScalarConverter::ScalarConverter(const ScalarConverter &obj)
 {
 	std::cout << "ScalarConverter copy constructor called" << std::endl;
 	if (this != &obj)
 		*this = obj;
 }
 
-scalarConverter&	scalarConverter::operator=(const scalarConverter &obj)
+ScalarConverter&	ScalarConverter::operator=(const ScalarConverter &obj)
 {
 	std::cout << "ScalarConverter copy assignment operator called" << std::endl;
 	(void)obj;
 	return (*this);
 }
 
-scalarConverter::~scalarConverter()
+ScalarConverter::~ScalarConverter()
 {
 	std::cout << "ScalarConverter destructor called" << std::endl;
 	return ;
@@ -160,7 +160,7 @@ static bool	isPseudoLiterals(std::string str)
 	return (false);
 }
 
-void	scalarConverter::convert(std::string str)
+void	ScalarConverter::convert(std::string str)
 {
 	if (str.size() == 0)
 	{

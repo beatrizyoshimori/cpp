@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scalarConverter.hpp                                :+:      :+:    :+:   */
+/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -20,13 +20,13 @@
 #include <limits>
 #include <cmath>
 
-class scalarConverter
+class ScalarConverter
 {
 	private:
-		scalarConverter(void);
-		scalarConverter(const scalarConverter &obj);
-		scalarConverter& operator=(const scalarConverter &obj);
-		~scalarConverter(void);
+		ScalarConverter(void);
+		ScalarConverter(const ScalarConverter &obj);
+		ScalarConverter& operator=(const ScalarConverter &obj);
+		~ScalarConverter(void);
 
 	public:
 		static void	convert(std::string str);
