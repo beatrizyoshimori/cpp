@@ -7,7 +7,8 @@ RM				=		rm -rf
 OBJECTS_PATH	=		objects/
 
 SOURCES			=		main.cpp \
-						scalarConverter.cpp
+						scalarConverter.cpp \
+						printTypes.cpp
 
 HEADERS			=		scalarConverter.hpp
 
