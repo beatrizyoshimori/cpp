@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 19:51:53 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/02/07 19:52:00 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/16 21:55:48 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ AForm *Intern::makeForm(std::string name, std::string target)
 			std::cout << "Intern creates " << name << std::endl;
 			return (f[i](target));
 		}
-	std::cout << "Invalid form name!" << std::endl;
-	return (NULL);
 	throw Intern::InvalidFormName();
 }
 
