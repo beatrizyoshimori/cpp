@@ -93,7 +93,7 @@ static bool	isFloat(std::string str)
 	}
 	if (decimals == -1)
 		decimals = 1;
-	if (str[i] != 'f' || dot > 1 || str[0] == '.' || str[i - 1] == '.')
+	if (!isdigit(str[i - 1]) || str[i] != 'f' || dot > 1 || str[0] == '.' || str[i - 1] == '.')
 		return (false);
 	number = atof(str.c_str());
 	if (number > std::numeric_limits<float>::max() ||
