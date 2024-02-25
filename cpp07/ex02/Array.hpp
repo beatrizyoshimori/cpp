@@ -1,6 +1,8 @@
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
+#include <iostream>
+
 template <typename T>
 class Array
 {
@@ -24,23 +26,46 @@ class Array
 		}
 		Array(const Array &obj)
 		{
+			this->_array = NULL;
+			this->_size = 0;
 			if (this != &obj)
 				*this = obj;
 		}
 		Array& operator=(const Array &obj)
 		{
-
+			if (this != &obj)
+			{
+				if (this->_array)
+					delete[] this->_array;
+				new(this) Array(obj._size);
+				for (unsigned int i = 0; i < obj._size; i++)
+					this->_array[i] = obj._array[i];
+			}
+			return (*this);
 		}
-		~Array();
+		~Array()
+		{
+			if (this->_array)
+				delete[] this->_array;
+			this->_size = 0;
+			this->_array = NULL;
+			return ;
+		}
+		T	&operator[](int index)
+		{
+			if (index < 0 || index >= (int)this->_size)
+				throw (std::out_of_range("Error: Index out of range."));
+			return (this->_array[index]);
+			
+		}
+		unsigned int	size(void)
+		{
+			return (this->_size);
+		}
+		T	*getArray(void) const
+		{
+			return (this->_array);
+		}
 };
-
-Array::Array(/* args */)
-{
-}
-
-Array::~Array()
-{
-}
-
 
 #endif
