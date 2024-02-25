@@ -15,7 +15,25 @@ int	main(void)
 		std::cout << std::endl;
 	}
 	{
-		std::cout << "TEST 2 (INVALID POINTER)" << std::endl;
+		std::cout << "TEST 2 (RANDOM)" << std::endl;
+		srand(time(NULL));
+		Data		*ptr1 = new Data;
+		ptr1->value = (std::rand() % 1000);
+		uintptr_t	uintPtr1;
+		Data		*deserializePtr1;
+
+		uintPtr1 = Serializer::serialize(ptr1);
+		deserializePtr1 = Serializer::deserialize(uintPtr1);
+
+		std::cout << "Data's value through Data original pointer:\t"
+			 << ptr1->value << std::endl;
+		std::cout << "Data's value through Data deserialized pointer:\t"
+			<< deserializePtr1->value << std::endl;
+		std::cout << std::endl;
+		delete ptr1;
+	}
+	{
+		std::cout << "TEST 3 (INVALID POINTER)" << std::endl;
 		Data		*ptr = NULL;
 		std::cout << "Created a Data object NULL" << std::endl;
 		uintptr_t	uintPtr;
