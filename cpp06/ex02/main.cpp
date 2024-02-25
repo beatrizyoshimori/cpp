@@ -75,6 +75,6 @@ int	main(void)
 
 	std::cout << "Identify pointer:" << std::endl;
 	identify(ptrNull);
-	
+
 	return (0);
 }
