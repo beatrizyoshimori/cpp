@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:50:24 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/02/26 18:50:27 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:57:04 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 	int			a[] = {1, 2, 3, 4};
 	float		b[] = {2.5, 3.7, 99.5, 10.3};
 	std::string	c[] = {"oi", "tudo", "bem", "?"};
+	const int	d[] = {9, 8, 7, 6};
 
 	std::cout << "TEST INT" << std::endl;
 	::iter<int>(a, 4, ::print);
@@ -24,4 +25,6 @@ int	main(void)
 	::iter<float>(b, 4, ::print);
 	std::cout << std::endl << "TEST STRING" << std::endl;
 	::iter<std::string>(c, 4, ::print);
+	std::cout << std::endl << "TEST CONST INT" << std::endl;
+	::iter<int>(d, 4, ::print);
 }
