@@ -83,5 +83,10 @@ int main(int, char**)
 		numbers[i] = rand();
 	}
 	delete [] mirror;
+
+	std::cout << std::endl << "Test const Array:" << std::endl;
+	const Array<int> Zahlen(5);
+	// Zahlen[0] = 1;
+	std::cout << "Zahlen[0]: " << Zahlen[0] << std::endl;
 	return (0);
 }

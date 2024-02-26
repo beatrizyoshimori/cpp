@@ -2,6 +2,7 @@
 # define ARRAY_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 template <typename T>
 class Array
@@ -57,6 +58,12 @@ class Array
 				throw (std::out_of_range("Error: Index out of range."));
 			return (this->_array[index]);
 			
+		}
+		const T	&operator[](int index) const
+		{
+			if (index < 0 || index >= (int)this->_size)
+				throw (std::out_of_range("Error: Index out of range."));
+			return (this->_array[index]);
 		}
 		unsigned int	size(void)
 		{
