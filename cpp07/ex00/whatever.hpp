@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:49:20 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/02/26 18:49:24 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/26 21:30:10 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,25 @@ void	swap(T &a, T &b)
 }
 
 template <typename T>
-T min(T a, T b)
+T &min(T &a, T &b)
 {
 	return (a < b ? a : b);
 }
 
 template <typename T>
-T max(T a, T b)
+const T &min(const T &a, const T &b)
+{
+	return (a < b ? a : b);
+}
+
+template <typename T>
+T &max(T &a, T &b)
+{
+	return (a > b ? a : b);
+}
+
+template <typename T>
+const T &max(const T &a, const T &b)
 {
 	return (a > b ? a : b);
 }

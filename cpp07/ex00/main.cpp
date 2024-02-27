@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 18:49:14 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/02/26 18:49:37 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/26 21:35:08 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,27 @@ int	main(void)
 		std::cout << "Before swap:" << std::endl << "a = " << a <<", b = " << b << std::endl;
 		::swap(a, b);
 		std::cout << "After swap:" << std::endl << "a = " << a <<", b = " << b << std::endl;
+		std::cout << "min(a, b) = " << ::min(a, b) << std::endl;
+		std::cout << "max(a, b) = " << ::max(a, b) << std::endl;
+	}
+	{
+		std::cout << std::endl << "TEST CONST INT" << std::endl << std::endl;
+		const int	a = 4;
+		const int	b = 5;
+		std::cout << "min(a, b) = " << ::min(a, b) << std::endl;
+		std::cout << "max(a, b) = " << ::max(a, b) << std::endl;
+	}
+	{
+		std::cout << std::endl << "TEST CONST FLOAT" << std::endl << std::endl;
+		const float a = 3.987;
+		const float b = 4.321;
+		std::cout << "min(a, b) = " << ::min(a, b) << std::endl;
+		std::cout << "max(a, b) = " << ::max(a, b) << std::endl;
+	}
+	{
+		std::cout << std::endl << "TEST CONST STRING" << std::endl << std::endl;
+		const std::string a = "oi";
+		const std::string b = "tchau";
 		std::cout << "min(a, b) = " << ::min(a, b) << std::endl;
 		std::cout << "max(a, b) = " << ::max(a, b) << std::endl;
 	}
