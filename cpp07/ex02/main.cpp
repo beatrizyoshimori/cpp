@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 21:38:59 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/02/26 21:39:01 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/02/26 21:57:36 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,10 @@ int main(int, char**)
 	delete [] mirror;
 
 	std::cout << std::endl << "Test const Array:" << std::endl;
-	const Array<int> Zahlen(5);
+	Array<int> aux(2);
+	aux[0] = 6;
+	aux[1] = 7;
+	const Array<int> Zahlen = aux;
 	// Zahlen[0] = 1;
 	std::cout << "Zahlen[0]: " << Zahlen[0] << std::endl;
 	return (0);
