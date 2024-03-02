@@ -18,6 +18,12 @@ Span::Span(void)
 	return ;
 }
 
+Span::Span(unsigned int N) : _size(N)
+{
+	std::cout << "Span constructor called" << std::endl;
+	return ;
+}
+
 Span::Span(const Span &obj)
 {
 	std::cout << "Span copy constructor called" << std::endl;

@@ -18,9 +18,11 @@
 class Span
 {
 	private:
-		/* data */
+		unsigned int	_size;
+
 	public:
 		Span(void);
+		Span(unsigned int N);
 		Span(const Span &obj);
 		Span& operator=(const Span &obj);
 		~Span(void);
