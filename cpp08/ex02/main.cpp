@@ -81,6 +81,39 @@ int	main(void)
 		}
 		std::cout << std::endl;
 		std::cout << "top: " << c.top() << std::endl;
+
+		std::cout << std::endl << "Deep copy test:" << std::endl;
+		a.push(1207);
+		itA = a.begin();
+		iteA = a.end();
+		std::cout << "MutantStack A, size: " << a.size() <<	" -> [";
+		while (itA != iteA)
+		{
+			std::cout << *itA << (itA + 1 != iteA ? ", " : "]");
+			++itA;
+		}
+		std::cout << std::endl;
+		b.pop();
+		b.pop();
+		itB = b.begin();
+		iteB = b.end();
+		std::cout << "MutantStack B, size: " << b.size() <<	" -> [";
+		while (itB != iteB)
+		{
+			std::cout << *itB << (itB + 1 != iteB ? ", " : "]");
+			++itB;
+		}
+		std::cout << std::endl;
+		c.pop();
+		itC = c.begin();
+		iteC = c.end();
+		std::cout << "MutantStack C, size: " << c.size() <<	" -> [";
+		while (itC != iteC)
+		{
+			std::cout << *itC << (itC + 1 != iteC ? ", " : "]");
+			++itC;
+		}
+		std::cout << std::endl;
 	}
 	{
 		std::cout << std::endl << "TEST 3 (iterators)" << std::endl;
@@ -113,15 +146,15 @@ int	main(void)
 	}
 	{
 		std::cout << std::endl << "TEST 3 (list)" << std::endl;
-		srand(time(NULL));
-		size_t	size = 10;
-		int *numbers = new int[size];
-		for (size_t i = 0; i < size; i++)
-			numbers[i] = rand() % 100;
-
 		MutantStack<int>	mstack;
-		for (size_t i = 0; i < size; i++)
-			mstack.push(numbers[i]);
+		std::list<int>		list;
+
+		for (int i = 0; i < 10; i++)
+		{
+			mstack.push(i);
+			list.push_back(i);
+		}
+
 		MutantStack<int>::iterator	itMStack = mstack.begin();
 		MutantStack<int>::iterator	iteMStack = mstack.end();
 		std::cout << "MutantStack,	size: " << mstack.size() <<	" -> [";
@@ -132,15 +165,11 @@ int	main(void)
 		}
 		std::cout << std::endl;
 
-		std::list<int> list;
-		for (size_t i = 0; i < size; i++)
-			list.push_back(numbers[i]);
 		std::list<int>::iterator	itList = list.begin();
 		std::list<int>::iterator	iteList = list.end();
 		std::cout << "Container List,	size: " << list.size() <<	" -> [";
 		while (itList != iteList)
 			std::cout << *itList << (++itList != iteList ? ", " : "]");
 		std::cout << std::endl;
-		delete[] numbers;
 	}
 }
