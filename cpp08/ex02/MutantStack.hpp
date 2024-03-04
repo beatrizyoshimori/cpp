@@ -24,11 +24,7 @@ class MutantStack : public std::stack<T>
 {
 	public:
 		MutantStack(void) {};
-		MutantStack(const MutantStack &mutant)
-		{
-			*this = mutant;
-			return ;
-		}
+		MutantStack(const MutantStack &mutant) : std::stack<T>(mutant){}
 		MutantStack	&operator=(const MutantStack &mutant)
 		{
 			if (this != &mutant)
