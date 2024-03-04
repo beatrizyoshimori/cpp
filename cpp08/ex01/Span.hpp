@@ -14,11 +14,14 @@
 # define SPAN_HPP
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 class Span
 {
 	private:
-		unsigned int	_size;
+		unsigned int		_size;
+		std::vector<int>	_integers;
 
 	public:
 		Span(void);
@@ -26,6 +29,16 @@ class Span
 		Span(const Span &obj);
 		Span& operator=(const Span &obj);
 		~Span(void);
+
+		void	addNumber(int number);
+		int		shortestSpan(void);
+		int		longestSpan(void);
+		void	addNumbers(std::vector<int >::iterator b, std::vector<int >::iterator e);
+
+		unsigned int	getSize(void) const;
+		int				getInteger(unsigned int i) const;
+		void			setInteger(unsigned int i, int integer);
+
 };
 
 #endif
