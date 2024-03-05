@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 20:11:03 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/02/28 20:11:31 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/03/05 18:21:02 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class MutantStack : public std::stack<T>
 {
 	public:
 		MutantStack(void) {};
-		MutantStack(const MutantStack &mutant) : std::stack<T>(mutant){}
+		MutantStack(const MutantStack &mutant) : std::stack<T>(mutant) {};
 		MutantStack	&operator=(const MutantStack &mutant)
 		{
 			if (this != &mutant)
