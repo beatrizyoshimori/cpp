@@ -4,7 +4,7 @@ int	main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		std::cout << "Error: wrong number of arguments!\nUsage: ./RPN <parameter>" << std::endl;
+		std::cerr << "Error: wrong number of arguments!\nUsage: ./RPN <parameter>" << std::endl;
 		return (1);
 	}
 	RPN	rpn;
@@ -16,5 +16,4 @@ int	main(int argc, char **argv)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	
 }
