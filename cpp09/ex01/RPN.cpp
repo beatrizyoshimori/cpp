@@ -73,3 +73,8 @@ void	RPN::calculate(char p)
 		this->_numbers.top() /= num;
 	}
 }
+
+const std::stack<int>	&RPN::getNumbers(void) const
+{
+	return (this->_numbers);
+}

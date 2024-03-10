@@ -29,6 +29,8 @@ class RPN
 		void	validateParameter(std::string str);
 		void	addNumber(char p);
 		void	calculate(char p);
+
+		const std::stack<int>	&getNumbers(void) const;
 };
 
 #endif
