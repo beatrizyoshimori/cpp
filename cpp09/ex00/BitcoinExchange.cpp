@@ -69,7 +69,7 @@ static void	trim(std::string &str)
 
 void	BitcoinExchange::loadDatabase(void)
 {
-	std::ifstream	file("data.csv");
+	std::ifstream	file("files/data.csv");
 	if (!file)
 		throw std::runtime_error(RED "Couldn't open database file." RESET);
 	
