@@ -69,7 +69,7 @@ void	RPN::calculate(char p)
 	else
 	{
 		if (num == 0)
-			throw std::runtime_error (RED "Error: Could'nt divide by 0." RESET);
+			throw std::runtime_error (RED "Error: Couldn't divide by 0." RESET);
 		this->_numbers.top() /= num;
 	}
 }
