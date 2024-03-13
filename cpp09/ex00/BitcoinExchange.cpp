@@ -143,7 +143,7 @@ bool	BitcoinExchange::isFormatValid(std::string &line, t_date &date, char delimi
 	trim(date.rate);
 	if (date.rate.size() == 0)
 	{
-		std::cerr << RED "Error: bad input => " << line << RESET << std::endl << is << std::endl << date.rate.size();
+		std::cerr << RED "Error: bad input => " << line << RESET << std::endl;
 		return (false);
 	}
 	return (true);
