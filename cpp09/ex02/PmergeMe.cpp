@@ -20,6 +20,9 @@ PmergeMe&	PmergeMe::operator=(const PmergeMe &obj)
 		this->_unsortedVector = obj._unsortedVector;
 		this->_sortedVector = obj._sortedVector;
 		this->_pendChainVector = obj._pendChainVector;
+		this->_unsortedDeque = obj._unsortedDeque;
+		this->_sortedDeque = obj._sortedDeque;
+		this->_pendChainDeque = obj._pendChainDeque;
 	}
 	return *this;
 }
@@ -95,16 +98,13 @@ void	PmergeMe::checkDuplicateNumbers(std::vector<int> vec)
 		itNext = it;
 		itNext++;
 		if (itNext != itEnd)
-		{
 			if (*it == *itNext)
 				throw std::runtime_error("Error: Duplicate numbers.");
-		}
 	}
 }
 
 void	PmergeMe::createAndSortMainChainVector(void)
 {
-	std::vector<int>			mainChainAux;
 	std::vector<int>::iterator	itNext;
 	std::vector<int>::iterator	it = this->_unsortedVector.begin();
 	std::vector<int>::iterator	itEnd = this->_unsortedVector.end();
@@ -115,26 +115,24 @@ void	PmergeMe::createAndSortMainChainVector(void)
 		itNext++;
 		if (*it > *itNext)
 		{
-			mainChainAux.push_back(*it);
+			this->_sortedVector.insert(std::upper_bound(this->_sortedVector.begin(), \
+				this->_sortedVector.end(), *it), *it);
 			this->_pendChainVector.push_back(*itNext);
 		}
 		else
 		{
-			mainChainAux.push_back(*itNext);
+			this->_sortedVector.insert(std::upper_bound(this->_sortedVector.begin(), \
+				this->_sortedVector.end(), *itNext), *itNext);
 			this->_pendChainVector.push_back(*it);
 		}
 		it += 2;
 	}
 	if (this->_straggler != -1)
 	{
-		this->_sortedVector.push_back(this->_straggler);
+		this->_sortedVector.insert(std::upper_bound(this->_sortedVector.begin(), \
+			this->_sortedVector.end(), this->_straggler), this->_straggler);
 		this->_unsortedVector.push_back(this->_straggler);
 	}
-	it = mainChainAux.begin();
-	itEnd = mainChainAux.end();
-	for (; it != itEnd; it++)
-		this->_sortedVector.insert(std::upper_bound(this->_sortedVector.begin(), \
-			this->_sortedVector.end(), *it), *it);
 }
 
 void	PmergeMe::insertionVector(void)
@@ -142,23 +140,22 @@ void	PmergeMe::insertionVector(void)
 	unsigned int				j0 = 1;
 	unsigned int				j1 = 1;
 	unsigned int				erasedElements = 0;
-	std::vector<int>::iterator	it = this->_pendChainVector.begin();
+	unsigned int				size = this->_pendChainVector.size();
+	std::vector<int>::iterator	itPos = this->_pendChainVector.begin();
 
-	if (this->_pendChainVector.size() > 0)
-		this->_sortedVector.insert(this->_sortedVector.begin(), *it);
-	// this->_pendChainVector.erase(it);
+	if (size > 0)
+		this->_sortedVector.insert(std::upper_bound(this->_sortedVector.begin(), \
+				this->_sortedVector.end(), *itPos), *itPos);
 	erasedElements++;
-	while (erasedElements < this->_pendChainVector.size())
+	while (erasedElements < size)
 	{
 		unsigned int	jacNumber = generateJacobsthalNumbers(j0, j1);
 		j0 = j1;
 		j1 = jacNumber;
-		// jacNumber -= erasedElements;
-		std::vector<int>::iterator	itPos;
-		if (this->_pendChainVector.size() < jacNumber)
+		if (size < jacNumber)
 		{
 			itPos = this->_pendChainVector.end() - 1;
-			jacNumber = this->_pendChainVector.size();
+			jacNumber = size;
 		}
 		else
 			itPos = this->_pendChainVector.begin() + jacNumber - 1;
@@ -166,17 +163,14 @@ void	PmergeMe::insertionVector(void)
 		{
 			this->_sortedVector.insert(std::upper_bound(this->_sortedVector.begin(), \
 				this->_sortedVector.end(), *itPos), *itPos);
-			// this->_pendChainVector.erase(itPos);
 			erasedElements++;
 			itPos--;
-			// jacNumber--;
 		}
 	}
 }
 
 void	PmergeMe::createAndSortMainChainDeque(void)
 {
-	std::deque<int>			mainChainAux;
 	std::deque<int>::iterator	itNext;
 	std::deque<int>::iterator	it = this->_unsortedDeque.begin();
 	std::deque<int>::iterator	itEnd = this->_unsortedDeque.end();
@@ -187,26 +181,24 @@ void	PmergeMe::createAndSortMainChainDeque(void)
 		itNext++;
 		if (*it > *itNext)
 		{
-			mainChainAux.push_back(*it);
+			this->_sortedDeque.insert(std::upper_bound(this->_sortedDeque.begin(), \
+				this->_sortedDeque.end(), *it), *it);
 			this->_pendChainDeque.push_back(*itNext);
 		}
 		else
 		{
-			mainChainAux.push_back(*itNext);
+			this->_sortedDeque.insert(std::upper_bound(this->_sortedDeque.begin(), \
+				this->_sortedDeque.end(), *itNext), *itNext);
 			this->_pendChainDeque.push_back(*it);
 		}
 		it += 2;
 	}
 	if (this->_straggler != -1)
 	{
-		this->_sortedDeque.push_back(this->_straggler);
+		this->_sortedDeque.insert(std::upper_bound(this->_sortedDeque.begin(), \
+				this->_sortedDeque.end(), this->_straggler), this->_straggler);
 		this->_unsortedDeque.push_back(this->_straggler);
 	}
-	it = mainChainAux.begin();
-	itEnd = mainChainAux.end();
-	for (; it != itEnd; it++)
-		this->_sortedDeque.insert(std::upper_bound(this->_sortedDeque.begin(), \
-			this->_sortedDeque.end(), *it), *it);
 }
 
 void	PmergeMe::insertionDeque(void)
@@ -214,36 +206,31 @@ void	PmergeMe::insertionDeque(void)
 	unsigned int				j0 = 1;
 	unsigned int				j1 = 1;
 	unsigned int				erasedElements = 0;
-	std::deque<int>::iterator	it = this->_pendChainDeque.begin();
+	unsigned int				size = this->_pendChainDeque.size();
+	std::deque<int>::iterator	itPos = this->_pendChainDeque.begin();
 
-	if (this->_pendChainDeque.size() > 0)
-		this->_sortedDeque.insert(this->_sortedDeque.begin(), *it);
-	// this->_pendChainDeque.erase(it);
+	if (size > 0)
+		this->_sortedDeque.insert(std::upper_bound(this->_sortedDeque.begin(), \
+				this->_sortedDeque.end(), *itPos), *itPos);
 	erasedElements++;
-	// std::cout << "size: " << this->_pendChainDeque.size() << std::endl;
-	while (erasedElements < this->_pendChainDeque.size())
+	while (erasedElements < size)
 	{
 		unsigned int	jacNumber = generateJacobsthalNumbers(j0, j1);
 		j0 = j1;
 		j1 = jacNumber;
-		// jacNumber -= erasedElements;
-		std::deque<int>::iterator	itPos;
-		if (this->_pendChainDeque.size() < jacNumber)
+		if (size < jacNumber)
 		{
 			itPos = this->_pendChainDeque.end() - 1;
-			jacNumber = this->_pendChainDeque.size();
+			jacNumber = size;
 		}
 		else
 			itPos = this->_pendChainDeque.begin() + jacNumber - 1;
 		while (jacNumber > erasedElements)
 		{
-			// std::cout << "jacNumber: " << jacNumber << std::endl;
 			this->_sortedDeque.insert(std::upper_bound(this->_sortedDeque.begin(), \
 				this->_sortedDeque.end(), *itPos), *itPos);
-			// this->_pendChainDeque.erase(itPos);
 			erasedElements++;
 			itPos--;
-			// jacNumber--;
 		}
 	}
 }
