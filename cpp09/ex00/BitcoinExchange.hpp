@@ -6,7 +6,7 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 18:22:38 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/03/05 18:25:53 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:16:37 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <map>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"
@@ -47,7 +48,7 @@ class	BitcoinExchange
 		~BitcoinExchange(void);
 
 		void	loadDatabase(void);
-		void	convert(std::string filename);
+		void	convert(char* filename);
 		void	printConversion(t_date &date);
 
 		bool	isFormatValid(std::string &line, t_date &date, char delimiter);

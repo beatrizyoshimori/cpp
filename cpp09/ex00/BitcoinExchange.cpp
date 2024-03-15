@@ -6,12 +6,11 @@
 /*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 18:22:36 by byoshimo          #+#    #+#             */
-/*   Updated: 2024/03/05 18:24:24 by byoshimo         ###   ########.fr       */
+/*   Updated: 2024/03/15 17:40:26 by byoshimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
-#include <iomanip>
 
 BitcoinExchange::BitcoinExchange(void)
 {
@@ -84,7 +83,7 @@ void	BitcoinExchange::loadDatabase(void)
 	file.close();
 }
 
-void	BitcoinExchange::convert(std::string filename)
+void	BitcoinExchange::convert(char* filename)
 {
 	std::ifstream	file(filename);
 	if (!file)
@@ -107,6 +106,8 @@ void	BitcoinExchange::printConversion(t_date &date)
 {
 	std::map<std::string, std::string>::iterator	itB = this->_database.begin();
 	std::map<std::string, std::string>::iterator	itE = this->_database.end();
+
+	itE--;
 	for (; itE != itB; itE--)
 	{
 		if (date.fullDate >= itE->first)
