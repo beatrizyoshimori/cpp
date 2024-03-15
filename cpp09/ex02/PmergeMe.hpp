@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: byoshimo <byoshimo@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/15 17:49:21 by byoshimo          #+#    #+#             */
+/*   Updated: 2024/03/15 17:49:25 by byoshimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PMERGE_ME_HPP
 # define PMERGE_ME_HPP
 
@@ -7,6 +19,7 @@
 #include <vector>
 #include <deque>
 #include <ctime>
+#include <algorithm>
 
 # define RESET			"\033[0m"
 # define RED			"\033[31m"
